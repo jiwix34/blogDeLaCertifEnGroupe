@@ -18,11 +18,39 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @author hugues
  */
 class SiteController extends Controller {
-    /**
- * @Route("/")
+    
+    
+///////////////////////// View User
+/**
+ * @Route("/",name="home")
  * @Template(":site:index.html.twig")
  */
- public function HomeSite(){
+ public function homeSite(){
      
  }
+ 
+ /**
+ * @Route("/annoncePhoto",name="photo")
+ * @Template(":site:annoncePhoto.html.twig")
+ */
+ public function annoncePhoto (){
+     
+ }
+ 
+ /**
+ * @Route("/annonceEvenement",name="evenement")
+ * @Template(":site:annonceEvenement.html.twig")
+ */
+ public function annonceEvenement (){
+     
+ }
+ 
+ /**
+ * @Route("/login",name="login")
+ * @Template(":site:login.html.twig")
+ */
+ public function login (){
+     
+ }
+  
 }
