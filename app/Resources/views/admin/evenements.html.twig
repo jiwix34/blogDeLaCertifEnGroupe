@@ -1,0 +1,22 @@
+{%extends ":admin:index.html.twig"%}
+{% block body %}
+<a href="{{path("formAddEvent")}}"><h1> ajouter un un Evenements</h1></a>  
+    <div class="container">
+    <div class="row">
+        {% for evenements in annonceEvent %}
+            <div class="col-sm-6 col-md-12">
+                <img src="" class="img-responsive">
+                <h2>{{evenements.titre}}</h2>
+                <p>{{evenements.ville}}</p>
+                <p>{{evenements.lieuxExposition}}</p>
+                <p>{{evenements.commentaire}}</p>
+                <p>{{evenements.date}}</p>
+                <p>{{evenements.auteur}}</p>
+                <p>{{evenements.photo}}</p>
+                <div>
+                    <button type="button" class="btn btn-warning">Suppr</button>
+                    <button type="button" class="btn btn-success">Modif</button>
+                </div>
+             </div> 
+        {%endfor%}
+        {% endblock %}

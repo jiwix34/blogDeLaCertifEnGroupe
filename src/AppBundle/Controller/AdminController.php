@@ -8,7 +8,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Evenements;
 use AppBundle\Entity\Photos;
+use AppBundle\Form\EvenementsType;
 use AppBundle\Form\PhotosType;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -33,7 +35,10 @@ class AdminController extends Controller {
         
     }
     
+    /////////////////////////  CRUD Photo
     
+    
+    ///// Home admin Photo
   /**
    * @Route("/admin/photos", name="annoncephotos")
    * @Template(":admin:photos.html.twig")
@@ -48,7 +53,7 @@ class AdminController extends Controller {
       return array ('annoncephotos' => $photos);
       
     }
-    
+    ////// Ajout Photo Vue+Form
     /**
    * @Route("/admin/addphotos", name="formphotos")
    * @Template(":admin:addPhotos.html.twig")
@@ -61,7 +66,7 @@ class AdminController extends Controller {
         return array("formphotos"=> $f->createView());
         
     }
-    
+    ////// Ajout Photo Form Persist 
      /**
    * @Route("/admin/val", name="validphotos")
    */
@@ -82,4 +87,37 @@ class AdminController extends Controller {
         
             return $this->redirectToRoute('formphotos');
     }
+    
+    /////////////////////////  CRUD Evénement
+    
+    ///// Home admin Evenements
+    /**
+   * @Route("/admin/evenements", name="annonceEvent")
+   * @Template(":admin:evenements.html.twig")
+   */
+    public function getEvent(){
+      $em = $this->getDoctrine()->getManager();
+      $rsm = new ResultSetMappingBuilder($em);
+      $rsm->addRootEntityFromClassMetadata('AppBundle:Evenements', 'evenements');
+      $query = $em->createNativeQuery("select * from evenements ", $rsm);
+      $event = $query->getResult();
+      
+      return array ('annonceEvent' => $event);
+      
+    }
+    
+    ////// Ajout Evenements Vue+Form
+    /**
+   * @Route("/admin/addEvenements", name="formAddEvent")
+   * @Template(":admin:addEvenements.html.twig")
+   * @param Request $request
+   */
+    public function formEvenements(Request $request){
+        $event = new Evenements();
+        $f = $this->createForm(EvenementsType::class, $event);
+        
+        return array("formEvent"=> $f->createView());    
+    }
+    
+   ////// Ajout Evenements Vue+Form 
 }
