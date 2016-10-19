@@ -2,13 +2,14 @@
 
 namespace AppBundle\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Photos
  *
  * @ORM\Table(name="photos")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotosRepository")
+ * @ORM\Entity(repositoryClass="PhotosRepository")
  */
 class Photos
 {
