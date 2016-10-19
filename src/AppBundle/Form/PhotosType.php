@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -10,14 +11,21 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class PhotosType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
                 ->add('photo')
                 ->add('titre')
-                ->add('appareilPhotoUtilise')
+                ->add('appareilPhotoUtilise', ChoiceType::class, array(
+                    'choices'  => array(
+                        'reflex' => 'reflex',
+                        'numerique' => 'numerique',
+                        'portable' => 'portable',
+                    ),
+                    ))
                 ->add('commentaire')
                 ->add('date')
                 ->add('ville')
@@ -29,7 +37,7 @@ class PhotosType extends AbstractType
     }
     
     /**
-     * {@inheritdoc}
+     * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -38,13 +46,6 @@ class PhotosType extends AbstractType
         ));
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'appbundle_photos';
-    }
 
 
 }
