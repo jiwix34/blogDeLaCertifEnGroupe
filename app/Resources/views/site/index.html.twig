@@ -4,6 +4,7 @@
         <head>
             <meta charset="utf-8">
             <title> Photograff du dimanche </title>
+            {#Lien du css#}
             <link rel="stylesheet" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}">
             <link rel="stylesheet" href="{{asset('./css/news_css/main.css')}}">
             <link rel="stylesheet" href="{{asset('./css/font-awesome.min.css')}}">
@@ -16,6 +17,9 @@
                 <header>
                     <h1>Photograff du dimanche</h1>
                 </header>
+                
+                {#Barre de Nav avec Bootstrap#}
+                
                 <nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -26,12 +30,15 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
+                        
+                        {#Différents lien de la barre de nav#}
+                        
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a class="js-scrollTo" href="http://localhost/BlogPhotograff/web/app_dev.php/">Accueil<span class="sr-only"></span></a></li>
-                                <li><a class="js-scrollTo" href="http://localhost/BlogPhotograff/web/app_dev.php/annoncePhoto">Photos</a></li>
-                                <li><a class="js-scrollTo" href="http://localhost/BlogPhotograff/web/app_dev.php/annonceEvenement">Evènements</a></li>
-                                <li><a class="js-scrollTo" href="http://localhost/BlogPhotograff/web/app_dev.php/login">Se connecter</a></li>
+                                <li><a class="js-scrollTo" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
+                                <li><a class="js-scrollTo" href="{{path('photo')}}">Photos</a></li>
+                                <li><a class="js-scrollTo" href="{{path('evenement')}}">Evènements</a></li>
+                                <li><a class="js-scrollTo" href="{{path('login')}}">Se connecter</a></li>
                             </ul>
                         </div>
                     </div>
@@ -43,6 +50,9 @@
                         </p>
                     </div>
                 {% endblock %}
+                
+                {#Footer avec les informations sur les dev#}
+                
                 <footer class="footer">
                     <div class="container">
                         <div class="credit">
@@ -51,6 +61,9 @@
                     </div>
                 </footer>
             </div>
+                
+               {#Lien du javascript#}
+                
             <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
             <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
         </body>
