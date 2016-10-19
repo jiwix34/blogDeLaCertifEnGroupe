@@ -9,10 +9,13 @@
             <link rel="stylesheet" href="{{asset('./css/font-awesome.min.css')}}">
         </head>
         <body>
-            <header>
-                <h1>Photograff du dimanche</h1>
-            </header>
             <div id="container">
+                <div id="logo">
+                    <img src="{{asset('LOGO DU BLOG')}}"/>
+                </div>
+                <header>
+                    <h1>Photograff du dimanche</h1>
+                </header>
                 <nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -34,8 +37,10 @@
                     </div>
                 </nav>
                 {% block section %}
-                    <div>
-                        
+                    <div class="">
+                        <p>
+                        PAGE D'ACCUEIL
+                        </p>
                     </div>
                 {% endblock %}
                 <footer class="footer">
