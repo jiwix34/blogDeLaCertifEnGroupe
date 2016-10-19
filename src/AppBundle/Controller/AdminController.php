@@ -119,5 +119,25 @@ class AdminController extends Controller {
         return array("formEvent"=> $f->createView());    
     }
     
-   ////// Ajout Evenements Vue+Form 
+   ////// Ajout Evenements Vue+Form  
+   /**
+   * @Route("/admin/event/val", name="valideEvent")
+   */
+    public function addEvenements(Request $request){
+        $annonceEvent = new Evenements();
+        $f = $this->createForm(EvenementsType::class, $annonceEvent);
+        if ($request->getMethod() == 'POST'){
+              $f->handleRequest($request);
+//            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
+//            $annonce->getPhoto()->move('uploads/img', $nomDuFichier);
+//            $annonce->setPhoto($nomDuFichier);
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($annonceEvent);
+            $em->flush();
+            
+            return $this->redirectToRoute('annonceEvent');
+        }
+        
+            return $this->redirectToRoute('formAddEvent');
+    }
 }
