@@ -2,56 +2,25 @@
 
 {% block section %}
     
-    <div class="photo">
-        PHOTO PRISE SUR DES EVENEMENTS
-    </div>
-    <div class="information">
-        INFORMATIONS SUR LA PHOTO :
-        -Titre
-        -Description
-        -Matériel utilisé
-        -Date
-        -Ville
-        -Auteur     
-    </div>
+    {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
+    dans la section Evènement#}
     
-    <div class="photo">
-        PHOTO PRISE SUR DES EVENEMENTS
+    <div class="container">
+    <div class="row">
+        {% for evenements in annonceevenement %}
+            <div class="col-sm-6 col-md-12">
+                <img src="" class="img-responsive">
+                <h2>{{evenements.titre}}</h2>
+                <p>{{evenements.ville}}</p>
+                <p>{{evenements.appareilPhotoUtilise}}</p>
+                <p>{{evenements.commentaire}}</p>
+                <p>{{evenements.date}}</p>
+                <p>{{evenements.auteur}}</p>
+             </div>    
+                
+        {% endfor %}
+   
     </div>
-    <div class="information">
-        INFORMATIONS SUR LA PHOTO :
-        -Titre
-        -Description
-        -Matériel utilisé
-        -Date
-        -Ville
-        -Auteur     
-    </div>
-    
-    <div class="photo">
-        PHOTO PRISE SUR DES EVENEMENTS
-    </div>
-    <div class="information">
-        INFORMATIONS SUR LA PHOTO :
-        -Titre
-        -Description
-        -Matériel utilisé
-        -Date
-        -Ville
-        -Auteur     
-    </div>
-    
-    <div class="photo">
-        PHOTO PRISE SUR DES EVENEMENTS
-    </div>
-    <div class="information">
-        INFORMATIONS SUR LA PHOTO :
-        -Titre
-        -Description
-        -Matériel utilisé
-        -Date
-        -Ville
-        -Auteur     
     </div>
 
 {% endblock %}
