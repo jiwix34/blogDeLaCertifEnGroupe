@@ -12,10 +12,10 @@
                 <p>{{evenements.commentaire}}</p>
                 <p>{{evenements.date}}</p>
                 <p>{{evenements.auteur}}</p>
-                <p>{{evenements.photo}}</p>
-                <div>
-                    <button type="button" class="btn btn-warning" href="#">Suppr</button>
-                    <button type="button" class="btn btn-success" href="#">Modif</button>
+                <img src="{{asset('images/')~evenements.photo}}">
+                <div>                                                   
+                    <a type="button" class="btn btn-warning" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
+                    <a type="button" class="btn btn-success" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
                 </div>
              </div> 
                 
