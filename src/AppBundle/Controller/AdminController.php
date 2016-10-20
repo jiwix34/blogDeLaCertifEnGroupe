@@ -119,7 +119,7 @@ class AdminController extends Controller {
         return array("formEvent"=> $f->createView());    
     }
     
-   ////// Ajout Evenements Vue+Form  
+   ////// Ajout Evenements FormPersist  
    /**
    * @Route("/admin/event/val", name="valideEvent")
    */
@@ -128,9 +128,11 @@ class AdminController extends Controller {
         $f = $this->createForm(EvenementsType::class, $annonceEvent);
         if ($request->getMethod() == 'POST'){
               $f->handleRequest($request);
-//            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
-//            $annonce->getPhoto()->move('uploads/img', $nomDuFichier);
-//            $annonce->setPhoto($nomDuFichier);
+              
+            $nomDuFichier = md5(uniqid()).".".$annonceEvent->getPhoto()->getClientOriginalExtension();
+            $annonceEvent->getPhoto()->move('../web/images', $nomDuFichier);
+            $annonceEvent->setPhoto($nomDuFichier);
+              
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($annonceEvent);
             $em->flush();
@@ -139,5 +141,53 @@ class AdminController extends Controller {
         }
         
             return $this->redirectToRoute('formAddEvent');
+    }
+    
+    ////// Supre Evenements  
+     /**
+     * @Route("/admin/event/supr/{id}", name="suprEvent")
+     */
+     public function suprProjet($id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $recupId = $em->find("AppBundle:Evenements", $id);
+        $em->remove($recupId);
+        $em->flush();
+        
+        return $this->redirect($this->generateUrl('annonceEvent'));
+    }
+    
+    ////// Modification Evenements Vue+Form
+    /**
+     * @Route("admin/event/edit/{id}",name="editEvent")
+     * @Template(":admin:modifEvenements.html.twig")
+     * 
+     */
+    public function editAnnonce($id,Evenements $a){
+        return array("formEvent" => $this->createForm(EvenementsType::class, $a)->createView(),'id'=>$id);
+    }
+   
+    ////// Modification Evenements FormPersist
+    /**
+    * @Route("admin/projet/update/{id}",name="modifEvent")
+    */
+   public function  uptdateProjet(Request $request , $id){
+       $em = $this->getDoctrine()->getManager(); 
+       $a = new Evenements();
+       $f= $this->createForm(EvenementsType::class,$a);
+       $f->handleRequest($request);
+        
+        $nomDuImg= md5(uniqid()).".".$a->getPhoto()->getClientOriginalExtension();
+            $a->getPhoto()->move('../web/images', $nomDuImg);
+            $a->setPhoto($nomDuImg);
+            
+//       $a2 = $em->find("AppBundle:Evenements", $id);
+ 
+        
+        if($f->isValid()){   
+        $em->merge($a);
+        $em->flush();
+        }
+        
+        return $this->redirect($this->generateUrl('annonceEvent'));
     }
 }

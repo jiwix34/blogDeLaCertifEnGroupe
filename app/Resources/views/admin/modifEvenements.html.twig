@@ -1,0 +1,7 @@
+{%extends ":admin:index.html.twig"%}
+
+{% block body %}
+{{form_start(formEvent,{'attr':{'action':path('modifEvent',{'id':id})}})}}
+
+{{ form_end(formEvent) }}
+{% endblock%}
