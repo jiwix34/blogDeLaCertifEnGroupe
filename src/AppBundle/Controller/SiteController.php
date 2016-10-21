@@ -36,11 +36,8 @@ class SiteController extends Controller {
  */
  public function annoncePhoto (){
      
-      $em = $this->getDoctrine()->getManager();
-      $rsm = new ResultSetMappingBuilder($em);
-      $rsm->addRootEntityFromClassMetadata('AppBundle:Photos', 'photos');
-      $query = $em->createNativeQuery("select * from photos", $rsm);
-      $photos = $query->getResult();
+     $em = $this->getDoctrine();
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'));
       
       return array ('annoncePhotos' => $photos);
  }
@@ -51,13 +48,9 @@ class SiteController extends Controller {
  */
  public function annonceEvenement (){
      
-      $em = $this->getDoctrine()->getManager();
-      $rsm = new ResultSetMappingBuilder($em);
-      $rsm->addRootEntityFromClassMetadata('AppBundle:Evenements', 'evenements');
-      $query = $em->createNativeQuery("select * from evenements ", $rsm);
-      $event = $query->getResult();
-      
-      return array ('annonceEvent' => $event);
+        $em = $this->getDoctrine();
+        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'));
+        return array("annonceEvent" => $event);
       
  }
  
