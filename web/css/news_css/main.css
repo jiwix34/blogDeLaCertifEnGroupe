@@ -1,3 +1,9 @@
+@charset "UTF-8";
+#container {
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -7,15 +13,36 @@ and open the template in the editor.
     Created on : 21 oct. 2016, 10:47:57
     Author     : jimmy
 */
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 21 oct. 2016, 10:57:42
-    Author     : jimmy
-*/
+/*titre admin*/
+#messageBienvenue {
+  text-align: center; }
+
+/*fin titre admin*/
+/*lien pour ajouter un evenement*/
+#lienajout {
+  text-align: center; }
+
+/*fin du lien*/
+#adminEvenement div div {
+  /*titre de l'article*/
+  /*fin titre*/
+  /*balise p qui se trouve dans la boucle for*/
+  /*fin balise*/
+  /*image de l'article'*/
+  /*fin de l'image*/
+  /*bouton qui permet de modifier ou suprimé*/
+  /*fin bouton*/ }
+  #adminEvenement div div h2 {
+    text-align: center; }
+  #adminEvenement div div p {
+    display: flex;
+    justify-content: center; }
+  #adminEvenement div div #image {
+    border: none; }
+  #adminEvenement div div #bouton {
+    text-align: center;
+    margin-bottom: 30px; }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
