@@ -8,6 +8,7 @@
 
 namespace AppBundle\Controller;
 
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -35,6 +36,13 @@ class SiteController extends Controller {
  */
  public function annoncePhoto (){
      
+      $em = $this->getDoctrine()->getManager();
+      $rsm = new ResultSetMappingBuilder($em);
+      $rsm->addRootEntityFromClassMetadata('AppBundle:Photos', 'photos');
+      $query = $em->createNativeQuery("select * from photos", $rsm);
+      $photos = $query->getResult();
+      
+      return array ('annoncePhotos' => $photos);
  }
  
  /**
@@ -43,6 +51,14 @@ class SiteController extends Controller {
  */
  public function annonceEvenement (){
      
+      $em = $this->getDoctrine()->getManager();
+      $rsm = new ResultSetMappingBuilder($em);
+      $rsm->addRootEntityFromClassMetadata('AppBundle:Evenements', 'evenements');
+      $query = $em->createNativeQuery("select * from evenements ", $rsm);
+      $event = $query->getResult();
+      
+      return array ('annonceEvent' => $event);
+      
  }
  
  /**

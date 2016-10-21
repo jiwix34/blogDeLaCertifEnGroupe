@@ -40,7 +40,7 @@ class AdminController extends Controller {
     
     ///// Home admin Photo
   /**
-   * @Route("/admin/photos", name="annoncephotos")
+   * @Route("/admin/photos", name="annoncePhotos")
    * @Template(":admin:photos.html.twig")
    */
     public function getPhotos(){
@@ -50,7 +50,7 @@ class AdminController extends Controller {
       $query = $em->createNativeQuery("select * from photos", $rsm);
       $photos = $query->getResult();
       
-      return array ('annoncephotos' => $photos);
+      return array ('annoncePhotos' => $photos);
       
     }
     ////// Ajout Photo Vue+Form
@@ -164,6 +164,8 @@ class AdminController extends Controller {
      */
     public function editAnnonce($id,Evenements $a){
         return array("formEvent" => $this->createForm(EvenementsType::class, $a)->createView(),'id'=>$id);
+        
+        
     }
    
     ////// Modification Evenements FormPersist
@@ -180,8 +182,8 @@ class AdminController extends Controller {
             $a->getPhoto()->move('../web/images', $nomDuImg);
             $a->setPhoto($nomDuImg);
             
-//       $a2 = $em->find("AppBundle:Evenements", $id);
- 
+//       $a2 = $em->findByphoto("AppBundle:Evenements", $id);
+//       
         
         if($f->isValid()){   
         $em->merge($a);
