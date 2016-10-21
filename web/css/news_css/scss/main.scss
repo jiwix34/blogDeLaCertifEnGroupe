@@ -1,10 +1,8 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 18 oct. 2016, 16:14:37
-    Author     : hugues
-*/
-
+@import 'mixin';
+@import 'home';
+@import 'adminEvenement';
+@import 'userEvenement';
+@import 'adminPhoto';
+@import 'userPhoto';
+@import 'login';
+@import 'adminBrouillon';
