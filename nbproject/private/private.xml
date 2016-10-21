@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/blogPhotograff/src/AppBundle/Controller/AdminController.php</file>
-            <file>file:/var/www/html/blogPhotograff/src/AppBundle/Entity/Evenements.php</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/admin/index.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/site/login.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/site/annoncePhoto.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/site/annonceEvenement.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/admin/evenements.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/site/index.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/admin/addPhotos.html.twig</file>
         </group>
     </open-files>
 </project-private>
