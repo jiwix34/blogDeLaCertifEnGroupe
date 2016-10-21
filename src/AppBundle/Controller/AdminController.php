@@ -192,4 +192,14 @@ class AdminController extends Controller {
         
         return $this->redirect($this->generateUrl('annonceEvent'));
     }
+    
+ /**
+     * @Route("/admin/projet", name="projetAdmin");
+     * @Template("projetAdmin.html.twig");
+     */
+    public function projetAdmin() {
+        $em = $this->getDoctrine();
+        $projet = $em->getRepository("AppBundle:Projet")->findBy(array('nom' => 'Symfony'));
+        return array("projets" => $projet);
+    }
 }
