@@ -82,11 +82,23 @@ class AdminController extends Controller {
             $em->persist($annonce);
             $em->flush();
             
-            return $this->redirectToRoute('annoncephotos');
+            return $this->redirectToRoute('annoncePhotos');
         }
         
-            return $this->redirectToRoute('formphotos');
+            return $this->redirectToRoute('formPhotos');
+                           
     }
+    
+    /**
+     * @Route("/admin/photos/brouillon", name="photoBrou");
+     * @Template(":admin:brouillonPhoto.html.twig");
+     */
+    public function photoBrou() {
+        $em = $this->getDoctrine();
+        $photo = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '0'));
+        return array("brouillonPhoto" => $photo);
+    }
+    
     
     /////////////////////////  CRUD Evénement
     
@@ -123,7 +135,7 @@ class AdminController extends Controller {
    /**
    * @Route("/admin/event/val", name="valideEvent")
    */
-    public function addEvenements(Request $request){
+    public function addEvent(Request $request){
         $annonceEvent = new Evenements();
         $f = $this->createForm(EvenementsType::class, $annonceEvent);
         if ($request->getMethod() == 'POST'){
@@ -147,7 +159,7 @@ class AdminController extends Controller {
      /**
      * @Route("/admin/event/supr/{id}", name="suprEvent")
      */
-     public function suprProjet($id){
+     public function suprEvent($id){
         $em = $this->getDoctrine()->getEntityManager();
         $recupId = $em->find("AppBundle:Evenements", $id);
         $em->remove($recupId);
@@ -162,7 +174,7 @@ class AdminController extends Controller {
      * @Template(":admin:modifEvenements.html.twig")
      * 
      */
-    public function editAnnonce($id,Evenements $a){
+    public function editEvent($id,Evenements $a){
         return array("formEvent" => $this->createForm(EvenementsType::class, $a)->createView(),'id'=>$id);
         
         
@@ -170,9 +182,9 @@ class AdminController extends Controller {
    
     ////// Modification Evenements FormPersist
     /**
-    * @Route("admin/projet/update/{id}",name="modifEvent")
+    * @Route("admin/event/update/{id}",name="modifEvent")
     */
-   public function  uptdateProjet(Request $request , $id){
+   public function  uptdateEvent(Request $request , $id){
        $em = $this->getDoctrine()->getManager(); 
        $a = new Evenements();
        $f= $this->createForm(EvenementsType::class,$a);
@@ -193,13 +205,14 @@ class AdminController extends Controller {
         return $this->redirect($this->generateUrl('annonceEvent'));
     }
     
+    ////// Section Brouillon Evenements 
  /**
-     * @Route("/admin/projet", name="projetAdmin");
-     * @Template("projetAdmin.html.twig");
+     * @Route("/admin/event/brouillon", name="eventBrou");
+     * @Template(":admin:brouillonEvenements.html.twig");
      */
-    public function projetAdmin() {
+    public function brouilEvent() {
         $em = $this->getDoctrine();
-        $projet = $em->getRepository("AppBundle:Projet")->findBy(array('nom' => 'Symfony'));
-        return array("projets" => $projet);
+        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '0'));
+        return array("brouillonEvents" => $event);
     }
 }
