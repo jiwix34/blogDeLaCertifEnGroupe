@@ -1,23 +1,32 @@
 {%extends ":admin:index.html.twig"%}
 {% block body %}
-<a href="{{path("formAddEvent")}}"><h1> ajouter un un Evenements</h1></a>  
-    <div class="container">
+<a id ="lienajout" href="{{path("formAddEvent")}}"><h1> ajouter un Evenement</h1></a>  
+    <div class="container" id="adminEvenement">
     <div class="row">
         {% for evenements in annonceEvent %}
-            <div class="col-sm-6 col-md-12">
+            <div class="col-sm-12 col-md-12">
                 <img src="" class="img-responsive">
                 <h2>{{evenements.titre}}</h2>
+                <div class="row">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <div class="thumbnail" id="image">
+                            <img src="{{asset('images/')~evenements.photo}}">
+                        </div>
+                    </div>
+                </div>
                 <p>{{evenements.ville}}</p>
                 <p>{{evenements.lieuxExposition}}</p>
                 <p>{{evenements.commentaire}}</p>
                 <p>{{evenements.date}}</p>
                 <p>{{evenements.auteur}}</p>
-                <img src="{{asset('images/')~evenements.photo}}">
-                <div>                                                   
+                
+                <div id="bouton">                                                   
                     <a type="button" class="btn btn-warning" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
                     <a type="button" class="btn btn-success" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
                 </div>
              </div> 
                 
         {%endfor%}
+    </div>
+    </div>
         {% endblock %}
