@@ -68,16 +68,16 @@ class AdminController extends Controller {
     }
     ////// Ajout Photo Form Persist 
      /**
-   * @Route("/admin/val", name="validphotos")
+   * @Route("/admin/photos/val", name="validphotos")
    */
     public function addPhotos(Request $request){
         $annonce = new Photos();
         $f = $this->createForm(PhotosType::class, $annonce);
         if ($request->getMethod() == 'POST'){
               $f->handleRequest($request);
-//            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
-//            $annonce->getPhoto()->move('uploads/img', $nomDuFichier);
-//            $annonce->setPhoto($nomDuFichier);
+            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
+            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
+            $annonce->setPhoto($nomDuFichier);
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($annonce);
             $em->flush();
@@ -87,6 +87,48 @@ class AdminController extends Controller {
         
             return $this->redirectToRoute('formPhotos');
                            
+    }
+    
+          /**
+   * @Route("/admin/photos/modif/{id}", name="modifphotos")
+   * @Template(":admin:addPhotos.html.twig")
+   */
+    public function modifPhotos($id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $annonce = $em->find('AppBundle:Photos', $id);
+        $f = $this->createForm(PhotosType::class, $annonce);
+        
+        return array ('formphotos' => $f ->createView(), "id"=>$id);
+    }
+    
+    /**
+   * @Route("/admin/photos/delate/{id}", name="delatephotos")
+   */
+    public function delatePhotos($id){
+         $em = $this->getDoctrine()->getEntityManager();
+         $annonce = $em->find('AppBundle:Photos', $id);
+         $em->remove($annonce);
+         $em->flush();
+         
+         return $this->redirect($this->generateUrl('annoncePhotos'));
+    }
+    
+    /**
+   * @Route("/admin/photos/update/{id}", name="updatephotos")
+   */
+    public function updatePhotos(Request $request, $id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $annonce = $em->find('AppBundle:Photos', $id);
+        $f = $this->createForm(PhotosType::class, $annonce);
+        if ($request->getMethod() == 'POST'){
+            $f->handleRequest($request);
+            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
+            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
+            $annonce->setPhoto($nomDuFichier);
+            $em->merge($annonce);
+            $em->flush();
+              return $this->redirect($this->generateUrl('annoncePhotos'));
+        }
     }
     
     /**

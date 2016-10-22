@@ -7,15 +7,19 @@
     <div class="row">
         {% for photos in annoncePhotos %}
             <div class="col-sm-6 col-md-12">
-                <img src="" class="img-responsive">
+                <img src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">
                 <h2>{{photos.titre}}</h2>
                 <p>{{photos.ville}}</p>
                 <p>{{photos.appareilPhotoUtilise}}</p>
                 <p>{{photos.commentaire}}</p>
-                <p>{{photos.date}}</p>
+                <p>{{photos.date|date('d/m/y')}}</p>
                 <p>{{photos.auteur}}</p>
              </div>    
-                
+               <div class="bouton">        
+                    <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
+                    <a type="button" class="btn btn-warning" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a>
+                   
+                </div>  
         {% endfor %}
    
     </div>

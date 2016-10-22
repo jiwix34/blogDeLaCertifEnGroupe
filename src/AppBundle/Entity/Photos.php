@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints\File;
 
 /**
  * Photos
@@ -23,9 +25,10 @@ class Photos
     private $id;
 
     /**
-     * @var string
+     * @var UploadedFile
      *
      * @ORM\Column(name="photo", type="string", length=255)
+     * @File(mimeTypes={"images/jpeg"})
      */
     private $photo;
 
@@ -51,9 +54,9 @@ class Photos
     private $commentaire;
 
     /**
-     * @var string
+     * @var DateTime
      *
-     * @ORM\Column(name="date", type="string", length=255)
+     * @ORM\Column(name="date", type="date")
      */
     private $date;
 
