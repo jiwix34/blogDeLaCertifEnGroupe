@@ -104,7 +104,7 @@ class AdminController extends Controller {
     
     ///// Home admin Evenements
     /**
-   * @Route("/admin/evenements", name="annonceEvent")
+   * @Route("/admin/event", name="annonceEvent")
    * @Template(":admin:evenements.html.twig")
    */
     public function getEvent(){
@@ -136,17 +136,17 @@ class AdminController extends Controller {
    * @Route("/admin/event/val", name="valideEvent")
    */
     public function addEvent(Request $request){
-        $annonceEvent = new Evenements();
-        $f = $this->createForm(EvenementsType::class, $annonceEvent);
+        $event = new Evenements();
+        $f = $this->createForm(EvenementsType::class, $event);
         if ($request->getMethod() == 'POST'){
               $f->handleRequest($request);
               
-            $nomDuFichier = md5(uniqid()).".".$annonceEvent->getPhoto()->getClientOriginalExtension();
-            $annonceEvent->getPhoto()->move('../web/images', $nomDuFichier);
-            $annonceEvent->setPhoto($nomDuFichier);
+            $nomDuFichier = md5(uniqid()).".".$event->getPhoto()->getClientOriginalExtension();
+            $event->getPhoto()->move('uploads/images', $nomDuFichier);
+            $event->setPhoto($nomDuFichier);
               
             $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($annonceEvent);
+            $em->persist($event);
             $em->flush();
             
             return $this->redirectToRoute('annonceEvent');
@@ -171,42 +171,44 @@ class AdminController extends Controller {
     ////// Modification Evenements Vue+Form
     /**
      * @Route("admin/event/edit/{id}",name="editEvent")
-     * @Template(":admin:modifEvenements.html.twig")
-     * 
+     * @Template(":admin:addEvenements.html.twig")
      */
-    public function editEvent($id,Evenements $a){
-        return array("formEvent" => $this->createForm(EvenementsType::class, $a)->createView(),'id'=>$id);
+    public function editEvent($id){
+//        return array("formEvent" => $this->createForm(EvenementsType::class, $a)->createView(),'id'=>$id);
+          $em = $this->getDoctrine()->getEntityManager();
+          $event = $em->find('AppBundle:Evenements',$id);
+          $f= $this->createForm(EvenementsType::class, $event);
         
-        
+          return array("formEvent"=> $f->createView(), "id"=>$id);
     }
    
     ////// Modification Evenements FormPersist
     /**
     * @Route("admin/event/update/{id}",name="modifEvent")
+    * @Template(":admin:modifEvenements.html.twig")
     */
-   public function  uptdateEvent(Request $request , $id){
-       $em = $this->getDoctrine()->getManager(); 
-       $a = new Evenements();
-       $f= $this->createForm(EvenementsType::class,$a);
+   public function  uptdateEvent(Request $request, $id){
+       $em = $this->getDoctrine()->getEntityManager(); 
+       $event = $em->find('AppBundle:Evenements',$id);
+       $f= $this->createForm(EvenementsType::class, $event);
+       
+       if ($request->getMethod() == 'POST'){
        $f->handleRequest($request);
-        
-        $nomDuImg= md5(uniqid()).".".$a->getPhoto()->getClientOriginalExtension();
-            $a->getPhoto()->move('../web/images', $nomDuImg);
-            $a->setPhoto($nomDuImg);
-            
-//       $a2 = $em->findByphoto("AppBundle:Evenements", $id);
-//       
-        
-        if($f->isValid()){   
-        $em->merge($a);
-        $em->flush();
+       
+       $nomDuFichier = md5(uniqid()).".".$event->getPhoto()->getClientOriginalExtension();
+            $event->getPhoto()->move('uploads/images', $nomDuFichier);
+            $event->setPhoto($nomDuFichier);
+       
+       $em = merge($event);
+       $em->flush();
+       
+       return $this->redirect($this->generateUrl('annonceEvent'));
         }
-        
-        return $this->redirect($this->generateUrl('annonceEvent'));
-    }
+       
+       }
     
     ////// Section Brouillon Evenements 
- /**
+   /**
      * @Route("/admin/event/brouillon", name="eventBrou");
      * @Template(":admin:brouillonEvenements.html.twig");
      */
