@@ -28,7 +28,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminController extends Controller {
     
  /**
- * @Route("/admin")
+ * @Route("/admin", name="admin")
  * @Template(":admin:index.html.twig")
  */
     public function homeAdmin(){
