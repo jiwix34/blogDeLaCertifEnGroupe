@@ -177,25 +177,21 @@ class AdminController extends Controller {
    /**
    * @Route("/admin/event/val", name="valideEvent")
    */
-    public function addEvent(Request $request){
-        $event = new Evenements();
-        $f = $this->createForm(EvenementsType::class, $event);
+   public function updateEvent(Request $request, $id){
+        $em = $this->getDoctrine()->getEntityManager();
+        $annonce = $em->find('AppBundle:Evenements', $id);
+        $f = $this->createForm(EvenementsType::class, $annonce);
         if ($request->getMethod() == 'POST'){
-              $f->handleRequest($request);
-              
-            $nomDuFichier = md5(uniqid()).".".$event->getPhoto()->getClientOriginalExtension();
-            $event->getPhoto()->move('uploads/images', $nomDuFichier);
-            $event->setPhoto($nomDuFichier);
-              
-            $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($event);
+            $f->handleRequest($request);
+            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
+            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
+            $annonce->setPhoto($nomDuFichier);
+            $em->merge($annonce);
             $em->flush();
-            
-            return $this->redirectToRoute('annonceEvent');
+              return $this->redirect($this->generateUrl('annoncePhotos'));
         }
-        
-            return $this->redirectToRoute('formAddEvent');
     }
+    
     
     ////// Supre Evenements  
      /**
@@ -216,7 +212,6 @@ class AdminController extends Controller {
      * @Template(":admin:addEvenements.html.twig")
      */
     public function editEvent($id){
-//        return array("formEvent" => $this->createForm(EvenementsType::class, $a)->createView(),'id'=>$id);
           $em = $this->getDoctrine()->getEntityManager();
           $event = $em->find('AppBundle:Evenements',$id);
           $f= $this->createForm(EvenementsType::class, $event);
@@ -227,7 +222,7 @@ class AdminController extends Controller {
     ////// Modification Evenements FormPersist
     /**
     * @Route("admin/event/update/{id}",name="modifEvent")
-    * @Template(":admin:modifEvenements.html.twig")
+    * 
     */
    public function  uptdateEvent(Request $request, $id){
        $em = $this->getDoctrine()->getEntityManager(); 
@@ -241,7 +236,7 @@ class AdminController extends Controller {
             $event->getPhoto()->move('uploads/images', $nomDuFichier);
             $event->setPhoto($nomDuFichier);
        
-       $em = merge($event);
+       $em -> merge($event);
        $em->flush();
        
        return $this->redirect($this->generateUrl('annonceEvent'));
