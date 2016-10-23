@@ -4,15 +4,16 @@
   margin: 0;
   padding: 0; }
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 21 oct. 2016, 10:47:57
-    Author     : jimmy
-*/
+#nav {
+  background-image: white;
+  margin-bottom: 0; }
+  #nav .nav > li {
+    font-size: 140%;
+    justify-content: space-around; }
+    #nav .nav > li footer {
+      background-color: grey;
+      text-align: center; }
+
 /*titre admin*/
 #messageBienvenue {
   text-align: center; }
@@ -63,7 +64,6 @@ and open the template in the editor.
 */
 .logo > img {
   background-size: cover;
-  height: 50%;
   width: 100%; }
 
 /*

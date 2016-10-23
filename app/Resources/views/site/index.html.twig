@@ -28,17 +28,18 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
+                            <a class="navbar-brand" href="{{path('login')}}">
+                                Connexion
+                            </a>
                         </div>
-                        
+
                         {#Différents lien de la barre de nav#}
-                        
+
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li><a class="js-scrollTo" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
                                 <li><a class="js-scrollTo" href="{{path('photo')}}">Photos</a></li>
-                                <li><a class="js-scrollTo" href="{{path('evenement')}}">Evènements</a></li>
-                                <li><a class="js-scrollTo" href="{{path('login')}}">Se connecter</a></li>
-                            </ul>
+                                <li><a class="js-scrollTo" href="{{path('evenement')}}">Evènements</a></li>                            </ul>
                         </div>
                     </div>
                 </nav>
