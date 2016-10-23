@@ -13,7 +13,7 @@
                 <p>{{evenements.auteur}}</p>
                 <img src="{{asset('images/')~evenements.photo}}">
                 <div>
-                    <a type="button" class="btn btn-success" href="">Mettre en Editer</a>
+                    <a type="button" class="btn btn-success" href="{{path('eventBrouEdit',{'id':evenements.id})}}">Mettre en Editer</a>
                     <a type="button" class="btn btn-danger" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
                     <a type="button" class="btn btn-warning" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
                 </div>
