@@ -10,14 +10,14 @@
                 <div class="row">
                     <div class="col-xs-6 col-xs-offset-3">
                         <div class="thumbnail" id="image">
-                            <img src="{{asset('images/')~evenements.photo}}">
+                            <img src="{{asset('uploads/images/')~evenements.photo}}">
                         </div>
                     </div>
                 </div>
                 <p>{{evenements.ville}}</p>
                 <p>{{evenements.lieuxExposition}}</p>
                 <p>{{evenements.commentaire}}</p>
-                <p>{{evenements.date}}</p>
+                <p>{{evenements.date|date('d/m/y')}}</p>
                 <p>{{evenements.auteur}}</p>
                 
                 <div id="bouton">                                                   

@@ -8,8 +8,11 @@
      
         <div class="container">
             <div class="col-sm-6 col-md-12">
+                 {%if id is defined%}
+        {{form_start(formphotos,{'attr':{'action':path('updatephotos',{'id':id}),'enctype':'multipart/form-data'}})}}
+              {% else %}
         {{form_start(formphotos,{'attr':{'action':path('validphotos'),'enctype':'multipart/form-data'}})}}
-        
+        {% endif %}
            {{form_end(formphotos)}}
             </div>
         </div>

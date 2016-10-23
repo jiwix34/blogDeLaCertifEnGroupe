@@ -8,9 +8,12 @@
      
         <div class="container">
             <div class="col-sm-6 col-md-12">
-        {{form_start(formEvent,{'attr':{'action':path('valideEvent'),'enctype':'multipart/form-data'}})}}
-        
-           {{form_end(formEvent)}}
+                {% if id is defined %}
+                {{form_start(formEvent,{'attr':{'action':path('modifEvent',{'id':id}),'enctype':'multipart/form-data'}})}}
+                {% else %}
+                {{form_start(formEvent,{'attr':{'action':path('valideEvent'),'enctype':'multipart/form-data'}})}}
+                {% endif %}
+                {{form_end(formEvent)}}
             </div>
         </div>
     </body>

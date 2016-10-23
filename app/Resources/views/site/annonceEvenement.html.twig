@@ -14,7 +14,7 @@
                 <p>{{evenements.ville}}</p>
                 <p>{{evenements.lieuxExposition}}</p>
                 <p>{{evenements.commentaire}}</p>
-                <p>{{evenements.date}}</p>
+                <p>{{evenements.date|date('Y-m-d')}}</p>
                 <p>{{evenements.auteur}}</p>
                 <img src="{{asset('images/')~evenements.photo}}">
              </div>    
