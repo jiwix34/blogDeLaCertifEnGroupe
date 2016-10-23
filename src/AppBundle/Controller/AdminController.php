@@ -44,11 +44,8 @@ class AdminController extends Controller {
    * @Template(":admin:photos.html.twig")
    */
     public function getPhotos(){
-      $em = $this->getDoctrine()->getManager();
-      $rsm = new ResultSetMappingBuilder($em);
-      $rsm->addRootEntityFromClassMetadata('AppBundle:Photos', 'photos');
-      $query = $em->createNativeQuery("select * from photos", $rsm);
-      $photos = $query->getResult();
+     $em = $this->getDoctrine();
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'));
       
       return array ('annoncePhotos' => $photos);
       
@@ -150,14 +147,10 @@ class AdminController extends Controller {
    * @Template(":admin:evenements.html.twig")
    */
     public function getEvent(){
-      $em = $this->getDoctrine()->getManager();
-      $rsm = new ResultSetMappingBuilder($em);
-      $rsm->addRootEntityFromClassMetadata('AppBundle:Evenements', 'evenements');
-      $query = $em->createNativeQuery("select * from evenements ", $rsm);
-      $event = $query->getResult();
-      
-      return array ('annonceEvent' => $event);
-      
+      $em = $this->getDoctrine();
+        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'));
+        return array("annonceEvent" => $event);
+            
     }
     
     ////// Ajout Evenements Vue+Form
@@ -258,4 +251,6 @@ class AdminController extends Controller {
         $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '0'));
         return array("brouillonEvents" => $event);
     }
+    
+    
 }

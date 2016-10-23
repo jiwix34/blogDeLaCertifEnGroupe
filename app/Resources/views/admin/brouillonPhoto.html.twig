@@ -14,7 +14,12 @@
                 <p>{{photos.commentaire}}</p>
                  <p>{{photos.date|date('d/m/y')}}</p>
                 <p>{{photos.auteur}}</p>
-             </div>    
+             </div> 
+              <div class="bouton">        
+                    <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
+                    <a type="button" class="btn btn-warning" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a>
+                   <a type="button" class="btn btn-success" href="">Mettre en Editer</a>
+                </div>  
                 
         {% endfor %}
    

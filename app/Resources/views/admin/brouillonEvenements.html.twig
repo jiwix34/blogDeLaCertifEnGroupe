@@ -9,12 +9,13 @@
                 <p>{{evenements.ville}}</p>
                 <p>{{evenements.lieuxExposition}}</p>
                 <p>{{evenements.commentaire}}</p>
-                <p>{{evenements.date}}</p>
+                <p>{{evenements.date|date('d/m/y')}}</p>
                 <p>{{evenements.auteur}}</p>
                 <img src="{{asset('images/')~evenements.photo}}">
-                <div>                                                   
-                    <a type="button" class="btn btn-warning" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
-                    <a type="button" class="btn btn-success" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
+                <div>
+                    <a type="button" class="btn btn-success" href="">Mettre en Editer</a>
+                    <a type="button" class="btn btn-danger" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
+                    <a type="button" class="btn btn-warning" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
                 </div>
              </div> 
                 
