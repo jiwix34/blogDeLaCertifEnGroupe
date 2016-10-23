@@ -11,7 +11,7 @@
                 <h2>{{photos.titre}}</h2>
                 <p>{{photos.ville}}</p>
                 <p>{{photos.appareilPhotoUtilise}}</p>
-                <p>{{photos.commentaire}}</p>
+                <p>{{photos.commentaire| truncate(450, true, ' ...')}}</p>
                 <p>{{photos.date|date('d/m/y')}}</p>
                 <p>{{photos.auteur}}</p>
              </div>    
