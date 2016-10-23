@@ -11,10 +11,15 @@
         </head>
         <body>
             <div id="container">
-                
+
                 {% block header %}
-               
-              
+                    <div class="header">
+                        <img class="header-img" src="{{asset('./images/fond-home.jpg')}}" />
+                        <div class="titre">
+                            <img src="{{asset('./images/visu-logo-home.png')}}" />
+                        </div>
+                    </div>
+
                {% endblock %}
                 
                 {#Barre de Nav avec Bootstrap#}
@@ -28,26 +33,28 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
+                            <a class="navbar-brand" href="index.html">
+                                <img alt="Logo" src="{{asset('./images/logo.png')}}">
+                            </a>
                         </div>
-                        
-                        {#Différents lien de la barre de nav#}
-                        
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
-                                <li><a class="js-scrollTo" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
-                                <li><a class="js-scrollTo" href="{{path('photo')}}">Photos</a></li>
-                                <li><a class="js-scrollTo" href="{{path('evenement')}}">Evènements</a></li>
-                                <li><a class="js-scrollTo" href="{{path('login')}}">Se connecter</a></li>
-                            </ul>
-                        </div>
+
+                                {#Différents lien de la barre de nav#}
+
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a class="" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
+                                        <li><a class="" href="{{path('photo')}}">Photos</a></li>
+                                        <li><a class="" href="{{path('evenement')}}">Evènements</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="connexion"><a class="" href="{{path('login')}}">Connexion</a></li>
+
+                                    </ul>
+                                </div>
                     </div>
                 </nav>
                 {% block section %}
-                    <div class="">
-                        <p>
-                        PAGE D'ACCUEIL
-                        </p>
-                    </div>
+                    
                 {% endblock %}
                 
                 {#Footer avec les informations sur les dev#}
@@ -55,7 +62,8 @@
                 <footer class="footer">
                     <div class="container">
                         <div class="credit">
-                            <p> Le site des beaux gosses </p>
+                            <p class="copy"> Copyright Photograff 2016 - Tous droits réservés</p>
+                            <p class="dev"> <b>Développement : <a href="{{asset('http://www.viendev.fr/')}}" target="new"> Vivien</a>,<a href="{{asset('http://www.matthieuverquera.fr/')}}" target="new"> Matthieu</a>, <a href="{{asset('')}}" target="new">Jimmy</a> et <a href="{{asset('http://www.hl-developerz.com/')}}" target="new">Hugues</a></b></p>
                         </div>
                     </div>
                 </footer>

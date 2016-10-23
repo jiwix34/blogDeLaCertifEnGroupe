@@ -44,11 +44,8 @@ class AdminController extends Controller {
    * @Template(":admin:photos.html.twig")
    */
     public function getPhotos(){
-      $em = $this->getDoctrine()->getManager();
-      $rsm = new ResultSetMappingBuilder($em);
-      $rsm->addRootEntityFromClassMetadata('AppBundle:Photos', 'photos');
-      $query = $em->createNativeQuery("select * from photos", $rsm);
-      $photos = $query->getResult();
+     $em = $this->getDoctrine();
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'));
       
       return array ('annoncePhotos' => $photos);
       
@@ -131,15 +128,31 @@ class AdminController extends Controller {
         }
     }
     
+    
+    ////// Section Brouillon Photo 
     /**
      * @Route("/admin/photos/brouillon", name="photoBrou");
      * @Template(":admin:brouillonPhoto.html.twig");
      */
     public function photoBrou() {
         $em = $this->getDoctrine();
-        $photo = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '0'));
-        return array("brouillonPhoto" => $photo);
+        $annonce = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '0'));
+        return array("brouillonPhoto" => $annonce);
     }
+    
+    /**
+     * @Route("/admin/photos/brouillon/{id}", name="photoBrouEdit")
+     */
+     public function brouilPhotoEdit($id){
+         $em = $this->getDoctrine()->getEntityManager();
+         $annonce = $em->find('AppBundle:Photos', $id);
+         $this->createForm(PhotosType::class, $annonce);
+         $annonce->setPublier(1);
+         $em->merge($annonce);
+         $em->flush();
+         return $this->redirectToRoute('photoBrou');
+        
+     }
     
     
     /////////////////////////  CRUD Evénement
@@ -150,14 +163,10 @@ class AdminController extends Controller {
    * @Template(":admin:evenements.html.twig")
    */
     public function getEvent(){
-      $em = $this->getDoctrine()->getManager();
-      $rsm = new ResultSetMappingBuilder($em);
-      $rsm->addRootEntityFromClassMetadata('AppBundle:Evenements', 'evenements');
-      $query = $em->createNativeQuery("select * from evenements ", $rsm);
-      $event = $query->getResult();
-      
-      return array ('annonceEvent' => $event);
-      
+      $em = $this->getDoctrine();
+        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'));
+        return array("annonceEvent" => $event);
+            
     }
     
     ////// Ajout Evenements Vue+Form
@@ -249,6 +258,7 @@ class AdminController extends Controller {
        }
     
     ////// Section Brouillon Evenements 
+       
    /**
      * @Route("/admin/event/brouillon", name="eventBrou");
      * @Template(":admin:brouillonEvenements.html.twig");
@@ -258,4 +268,20 @@ class AdminController extends Controller {
         $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '0'));
         return array("brouillonEvents" => $event);
     }
+    
+    
+    /**
+     * @Route("/admin/publication/{id}", name="eventBrouEdit")
+     */
+     public function brouilEventEdit($id){
+         $em = $this->getDoctrine()->getEntityManager();
+         $event = $em->find('AppBundle:Evenements', $id);
+         $this->createForm(EvenementsType::class, $event);
+         $event->setPublier(1);
+         $em->merge($event);
+         $em->flush();
+         return $this->redirectToRoute('eventBrou');
+        
+     }
+    
 }
