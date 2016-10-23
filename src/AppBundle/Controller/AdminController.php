@@ -177,19 +177,23 @@ class AdminController extends Controller {
    /**
    * @Route("/admin/event/val", name="valideEvent")
    */
-   public function updateEvent(Request $request, $id){
-        $em = $this->getDoctrine()->getEntityManager();
-        $annonce = $em->find('AppBundle:Evenements', $id);
-        $f = $this->createForm(EvenementsType::class, $annonce);
+   public function addEvent(Request $request){
+        $event = new Evenements();
+        $f = $this->createForm(EvenementsType::class, $event);
         if ($request->getMethod() == 'POST'){
-            $f->handleRequest($request);
-            $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
-            $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
-            $annonce->setPhoto($nomDuFichier);
-            $em->merge($annonce);
+              $f->handleRequest($request);
+            $nomDuFichier = md5(uniqid()).".".$event->getPhoto()->getClientOriginalExtension();
+            $event->getPhoto()->move('uploads/images', $nomDuFichier);
+            $event->setPhoto($nomDuFichier);
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($event);
             $em->flush();
-              return $this->redirect($this->generateUrl('annoncePhotos'));
+            
+            return $this->redirectToRoute('annonceEvent');
         }
+        
+            return $this->redirectToRoute('formEvent');
+                           
     }
     
     
