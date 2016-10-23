@@ -9,14 +9,13 @@
     <div class="row">
         {% for evenements in annonceEvent %}
             <div class="col-sm-6 col-md-12">
-               <img src="" class="img-responsive">
+               <img src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">
                 <h2>{{evenements.titre}}</h2>
                 <p>{{evenements.ville}}</p>
                 <p>{{evenements.lieuxExposition}}</p>
                 <p>{{evenements.commentaire}}</p>
-                <p>{{evenements.date|date('Y-m-d')}}</p>
+                <p>{{evenements.date|date('d/m/y')}}</p>
                 <p>{{evenements.auteur}}</p>
-                <img src="{{asset('images/')~evenements.photo}}">
              </div>    
                 
         {% endfor %}
