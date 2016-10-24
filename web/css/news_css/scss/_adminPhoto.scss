@@ -1,10 +1,10 @@
 /*lien pour ajouter un evenement*/
-#lienajoutphoto{
+.lienajoutphoto{
     text-align: center;
 }
 /*fin du lien*/
 
-#adminPhoto{
+.adminPhoto{
     div{
         div{
             /*titre de l'article*/
@@ -19,6 +19,19 @@
                 justify-content: center;
             }
             /*fin balise*/
+            
+            /*image de l'article'*/
+            .image{
+                border: none;
+            }
+            /*fin de l'image*/
+            
+            /*bouton qui permet de modifier ou suprimé*/
+            .boutonPhoto{
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            /*fin bouton*/
         }
     }
 }
