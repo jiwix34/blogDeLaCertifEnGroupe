@@ -12,10 +12,14 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/html/blogPhotograff/src/AppBundle/Controller/LoginController.php</file>
             <file>file:/var/www/html/blogPhotograff/src/AppBundle/Controller/AdminController.php</file>
-            <file>file:/var/www/html/blogPhotograff/app/Resources/views/admin/brouillonEvenements.html.twig</file>
-            <file>file:/var/www/html/blogPhotograff/app/Resources/views/admin/brouillonPhoto.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/site/login.html.twig</file>
             <file>file:/var/www/html/blogPhotograff/src/AppBundle/Controller/SiteController.php</file>
+            <file>file:/var/www/html/blogPhotograff/app/Resources/views/site/annonceEvenement.html.twig</file>
+            <file>file:/var/www/html/blogPhotograff/var/logs/dev.log</file>
+            <file>file:/var/www/html/blogPhotograff/app/config/security.yml</file>
+            <file>file:/var/www/html/blogPhotograff/src/AppBundle/Entity/User.php</file>
         </group>
     </open-files>
 </project-private>
