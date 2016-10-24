@@ -19,12 +19,12 @@
                             <img class="img-responsive"src="{{asset('./images/visu-logo-home.png')}}" />
                         </div>
                     </div>
-                        
 
-               {% endblock %}
-                
+
+                {% endblock %}
+
                 {#Barre de Nav avec Bootstrap#}
-                
+
                 <nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -39,27 +39,27 @@
                             </a>
                         </div>
 
-                                {#Différents lien de la barre de nav#}
+                        {#Différents lien de la barre de nav#}
 
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">
-                                        <li><a class="" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
-                                        <li><a class="" href="{{path('photo')}}">Photos</a></li>
-                                        <li><a class="" href="{{path('evenement')}}">Evènements</a></li>
-                                    </ul>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li class="connexion"><a class="" href="{{path('login')}}">Connexion</a></li>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a class="" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
+                                <li><a class="" href="{{path('photo')}}">Photos</a></li>
+                                <li><a class="" href="{{path('evenement')}}">Evènements</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="connexion"><a class="" href="{{path('login')}}">Connexion</a></li>
 
-                                    </ul>
-                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
                 {% block section %}
-                    
+
                 {% endblock %}
-                
+
                 {#Footer avec les informations sur les dev#}
-                
+
                 <footer class="footer">
                     <div class="container">
                         <div class="credit">
@@ -69,9 +69,9 @@
                     </div>
                 </footer>
             </div>
-                
-               {#Lien du javascript#}
-                
+
+            {#Lien du javascript#}
+
             <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
             <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
         </body>
