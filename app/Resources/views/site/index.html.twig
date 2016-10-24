@@ -3,6 +3,7 @@
     <HTML>
         <head>
             <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, user-scalable=no">
             <title> Photograff du dimanche </title>
             {#Lien du css#}
             <link rel="stylesheet" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -19,12 +20,12 @@
                             <img class="img-responsive"src="{{asset('./images/visu-logo-home.png')}}" />
                         </div>
                     </div>
-                        
 
-               {% endblock %}
-                
+
+                {% endblock %}
+
                 {#Barre de Nav avec Bootstrap#}
-                
+
                 <nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -34,44 +35,49 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="">
                                 <img alt="Logo" src="{{asset('./images/logo.png')}}">
                             </a>
                         </div>
 
-                                {#Différents lien de la barre de nav#}
+                        {#Différents lien de la barre de nav#}
 
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">
-                                        <li><a class="" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
-                                        <li><a class="" href="{{path('photo')}}">Photos</a></li>
-                                        <li><a class="" href="{{path('evenement')}}">Evènements</a></li>
-                                    </ul>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li class="connexion"><a class="" href="{{path('login')}}">Connexion</a></li>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a class="" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
+                                <li><a class="" href="{{path('photo')}}">Photos</a></li>
+                                <li><a class="" href="{{path('evenement')}}">Evènements</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="connexion"><a class="" href="{{path('login')}}">Connexion</a></li>
 
-                                    </ul>
-                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
                 {% block section %}
-                    
+
                 {% endblock %}
-                
+
                 {#Footer avec les informations sur les dev#}
-                
+
                 <footer class="footer">
                     <div class="container">
                         <div class="credit">
                             <p class="copy"> Copyright Photograff 2016 - Tous droits réservés</p>
-                            <p class="dev"> <b>Développement : <a href="{{asset('http://www.viendev.fr/')}}" target="new"> Vivien</a>,<a href="{{asset('http://www.matthieuverquera.fr/')}}" target="new"> Matthieu</a>, <a href="{{asset('')}}" target="new">Jimmy</a> et <a href="{{asset('http://www.hl-developerz.com/')}}" target="new">Hugues</a></b></p>
+                            <p class="dev"> <b>Développement : <a href="{{asset('http://www.viendev.fr/')}}" target="new"> Vivien<span>,</span> </a><a href="{{asset('http://www.matthieuverquera.fr/')}}" target="new"> Matthieu<span>,</span> </a><a href="{{asset('http://www.jimmy-friedblatt.fr/')}}" target="new">Jimmy <span>et</span> </a><a href="{{asset('http://www.hl-developerz.com/')}}" target="new">Hugues</a></b></p>
+                        </div>
+                        <div class="groupsocial">
+                        <a class="social socialface"><i class="fa fa-facebook"></i></a>
+                        <a class="social socialtwit"><i class="fa fa-twitter"></i></a>
+                        <a class="social socialinsta"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
                 </footer>
             </div>
-                
-               {#Lien du javascript#}
-                
+
+            {#Lien du javascript#}
+
             <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
             <script type="text/javascript" src="{{asset('./js/main.js')}}"></script>
         </body>

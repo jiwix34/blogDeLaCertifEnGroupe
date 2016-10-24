@@ -1,26 +1,36 @@
 {% extends ':site:index.html.twig' %}
 
+{% block header %}
+    <div class="header">
+        <img class="header-img" src="{{asset('./images/fond-page-evenements.jpg')}}" />
+    </div>
+{% endblock %}
+
 {% block section %}
-    
+
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
     dans la section Evènement#}
-    
-    <div class="container">
-    <div class="row">
-        {% for evenements in annonceEvent %}
-            <div class="col-sm-6 col-md-12">
-               <img src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">
-                <h2>{{evenements.titre}}</h2>
-                <p>{{evenements.ville}}</p>
-                <p>{{evenements.lieuxExposition}}</p>
-                <p>{{evenements.commentaire}}</p>
-                <p>{{evenements.date|date('d/m/y')}}</p>
-                <p>{{evenements.auteur}}</p>
-             </div>    
-                
-        {% endfor %}
-   
-    </div>
+    <div id="event">
+        <div class="container-fluid evenement">
+            <div class="row">
+                {% for evenements in annonceEvent %}
+                    <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
+                        <div class="thumbnail">
+                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
+                            <h2 class="title">{{evenements.titre}}</h2>
+                            <p class="info">{{evenements.ville}}</p>
+                            <p class="info">{{evenements.lieuxExposition}}</p>
+                            <p class="commentaire">{{evenements.commentaire}}</p>
+                            <p class="title"> {{evenements.date|date('d/m/y')}}</p>
+                            <p class="title">{{evenements.auteur}}</p>
+                            <p class="suite"><b>Voir la suite</b></p>
+                        </div>
+                    </div>    
+
+                {% endfor %}
+
+            </div>
+        </div>
     </div>
 
 {% endblock %}

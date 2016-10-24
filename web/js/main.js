@@ -12,5 +12,6 @@ $(document).ready(function(){
             top:($('#header-home').height() - $('.titre').outerHeight()) /2
         });
     });
+   
 
 
