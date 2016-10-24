@@ -3,6 +3,29 @@
   width: 100%;
   margin: 0;
   padding: 0; }
+  #container .footer .groupsocial {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; }
+    #container .footer .groupsocial .social {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: black;
+      font-size: 50px;
+      text-align: center;
+      display: block;
+      color: white;
+      padding-top: 6px;
+      transition: 1s;
+      margin-right: 40px;
+      margin-left: 40px; }
+    #container .footer .groupsocial .socialface:hover {
+      color: #3b5998; }
+    #container .footer .groupsocial .socialtwit:hover {
+      color: #1c9ceb; }
+    #container .footer .groupsocial .socialinsta:hover {
+      color: #a07c62; }
 
 .navbar {
   position: relative;
@@ -178,8 +201,6 @@ header {
   /*fin titre*/
   /*balise p qui se trouve dans la boucle for*/
   /*fin balise*/
-  /*image de l'article'*/
-  /*fin de l'image*/
   /*bouton qui permet de modifier ou suprimé*/
   /*fin bouton*/ }
   .adminEvenement div div h2 {
@@ -187,8 +208,6 @@ header {
   .adminEvenement div div p {
     display: flex;
     justify-content: center; }
-  .adminEvenement div div .image {
-    border: none; }
   .adminEvenement div div .bouton {
     text-align: center;
     margin-bottom: 30px; }
@@ -212,8 +231,6 @@ and open the template in the editor.
   /*fin titre*/
   /*balise p qui se trouve dans la boucle for*/
   /*fin balise*/
-  /*image de l'article'*/
-  /*fin de l'image*/
   /*bouton qui permet de modifier ou suprimé*/
   /*fin bouton*/ }
   .adminPhoto div div h2 {
@@ -221,8 +238,6 @@ and open the template in the editor.
   .adminPhoto div div p {
     display: flex;
     justify-content: center; }
-  .adminPhoto div div .image {
-    border: none; }
   .adminPhoto div div .boutonPhoto {
     text-align: center;
     margin-bottom: 30px; }
