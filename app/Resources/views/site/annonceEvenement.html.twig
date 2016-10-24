@@ -1,5 +1,11 @@
 {% extends ':site:index.html.twig' %}
 
+{% block header %}
+    <div class="header">
+        <img class="header-img" src="{{asset('./images/fond-page-evenements.jpg')}}" />
+    </div>
+{% endblock %}
+
 {% block section %}
     
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés

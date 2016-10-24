@@ -164,16 +164,16 @@ header {
       font-size: 20px; }
 
 /*titre admin*/
-#messageBienvenue {
+.messageBienvenue {
   text-align: center; }
 
 /*fin titre admin*/
 /*lien pour ajouter un evenement*/
-#lienajout {
+.lienajout {
   text-align: center; }
 
 /*fin du lien*/
-#adminEvenement div div {
+.adminEvenement div div {
   /*titre de l'article*/
   /*fin titre*/
   /*balise p qui se trouve dans la boucle for*/
@@ -182,14 +182,14 @@ header {
   /*fin de l'image*/
   /*bouton qui permet de modifier ou suprimé*/
   /*fin bouton*/ }
-  #adminEvenement div div h2 {
+  .adminEvenement div div h2 {
     text-align: center; }
-  #adminEvenement div div p {
+  .adminEvenement div div p {
     display: flex;
     justify-content: center; }
-  #adminEvenement div div #image {
+  .adminEvenement div div .image {
     border: none; }
-  #adminEvenement div div #bouton {
+  .adminEvenement div div .bouton {
     text-align: center;
     margin-bottom: 30px; }
 
@@ -202,15 +202,31 @@ and open the template in the editor.
     Created on : 21 oct. 2016, 10:54:08
     Author     : jimmy
 */
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 21 oct. 2016, 10:58:04
-    Author     : jimmy
-*/
+/*lien pour ajouter un evenement*/
+.lienajoutphoto {
+  text-align: center; }
+
+/*fin du lien*/
+.adminPhoto div div {
+  /*titre de l'article*/
+  /*fin titre*/
+  /*balise p qui se trouve dans la boucle for*/
+  /*fin balise*/
+  /*image de l'article'*/
+  /*fin de l'image*/
+  /*bouton qui permet de modifier ou suprimé*/
+  /*fin bouton*/ }
+  .adminPhoto div div h2 {
+    text-align: center; }
+  .adminPhoto div div p {
+    display: flex;
+    justify-content: center; }
+  .adminPhoto div div .image {
+    border: none; }
+  .adminPhoto div div .boutonPhoto {
+    text-align: center;
+    margin-bottom: 30px; }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates

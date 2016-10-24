@@ -1,16 +1,16 @@
 /*titre admin*/
-#messageBienvenue{
+.messageBienvenue{
     text-align: center;
 }
 /*fin titre admin*/
 
 /*lien pour ajouter un evenement*/
-#lienajout{
+.lienajout{
     text-align: center;
 }
 /*fin du lien*/
 
-#adminEvenement{
+.adminEvenement{
     div{
         div{
             /*titre de l'article*/
@@ -27,13 +27,13 @@
             /*fin balise*/
              
             /*image de l'article'*/
-            #image{
+            .image{
                 border: none;
             }
             /*fin de l'image*/
             
             /*bouton qui permet de modifier ou suprimé*/
-            #bouton{
+            .bouton{
                 text-align: center;
                 margin-bottom: 30px;
             }
