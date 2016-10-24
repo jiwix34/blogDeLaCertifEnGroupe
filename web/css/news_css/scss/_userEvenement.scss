@@ -1,6 +1,7 @@
 .evenement{
     text-align: left;
     margin-left: 5%;
+    margin: 0;
 
     .thumbnail{
         margin-top: 3%;
@@ -29,4 +30,9 @@
 .suite{
     position: absolute;
     padding-top: 3%;
+    color: #2ED4AD;
+}
+
+.changementCouleur:nth-child(2n+1){
+    background-color: lightgrey;
 }
