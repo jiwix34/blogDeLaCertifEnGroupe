@@ -1,23 +1,25 @@
 {%extends ":admin:index.html.twig"%}
 {% block body %}
-<a href="{{path("formAddEvent")}}"><h1> ajouter un un Evenements</h1></a>  
+    <a href="{{path("formAddEvent")}}"><h1> ajouter un un Evenements</h1></a>  
     <div class="container">
-    <div class="row">
-        {% for evenements in brouillonEvents %}
-            <div class="col-sm-6 col-md-12">
-                <h2>{{evenements.titre}}</h2>
-                <p>{{evenements.ville}}</p>
-                <p>{{evenements.lieuxExposition}}</p>
-                <p>{{evenements.commentaire}}</p>
-                <p>{{evenements.date|date('d/m/y')}}</p>
-                <p>{{evenements.auteur}}</p>
-                <img src="{{asset('images/')~evenements.photo}}">
-                <div>
-                    <a type="button" class="btn btn-success" href="{{path('eventBrouEdit',{'id':evenements.id})}}">Mettre en Editer</a>
-                    <a type="button" class="btn btn-danger" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
-                    <a type="button" class="btn btn-warning" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
-                </div>
-             </div> 
-                
-        {%endfor%}
-        {% endblock %}
+        <div class="row">
+            {% for evenements in brouillonEvents %}
+                <div class="col-sm-6 col-md-12">
+                    <img class="img-responsive" src="{{asset('uploads/images/')~evenements.photo}}">
+                    <h2>{{evenements.titre}}</h2>
+                    <p>{{evenements.ville}}</p>
+                    <p>{{evenements.lieuxExposition}}</p>
+                    <p>{{evenements.commentaire}}</p>
+                    <p>{{evenements.date|date('d/m/y')}}</p>
+                    <p>{{evenements.auteur}}</p>
+                    <div>
+                        <a type="button" class="btn btn-success" href="{{path('eventBrouEdit',{'id':evenements.id})}}">Publier</a>
+                        <a type="button" class="btn btn-danger" href="{{path('suprEvent',{'id':evenements.id})}}">Supprimer</a>
+                        <a type="button" class="btn btn-warning" href="{{path('editEvent',{'id':evenements.id})}}">Modifier</a>
+                    </div>
+                </div> 
+
+            {%endfor%}
+        </div>
+    </div>
+{% endblock %}
