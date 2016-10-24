@@ -1,30 +1,25 @@
 {%extends ":admin:index.html.twig"%}
+
 {% block body %}
-<a class="lienajout" href="{{path("formAddEvent")}}"><h1> ajouter un Evenement</h1></a>  
+    
+    <a class="lienajout" href="{{path("formAddEvent")}}"><h1> ajouter un Evenement</h1></a>  
     <div class="container adminEvenement">
     <div class="row">
         {% for evenements in annonceEvent %}
             <div class="col-sm-12 col-md-12">
                 <img src="" class="img-responsive">
+                <img src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">
                 <h2>{{evenements.titre}}</h2>
-                <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <div class="thumbnail" class="image">
-                            <img src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
                 <p>{{evenements.ville}}</p>
                 <p>{{evenements.lieuxExposition}}</p>
                 <p>{{evenements.commentaire}}</p>
                 <p>{{evenements.date|date('d/m/y')}}</p>
                 <p>{{evenements.auteur}}</p>
-                
+            </div>
                 <div class="bouton">                                                   
                     <a type="button" class="btn btn-warning" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
                     <a type="button" class="btn btn-success" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
-                </div>
-             </div> 
+                </div> 
                 
         {%endfor%}
     </div>
