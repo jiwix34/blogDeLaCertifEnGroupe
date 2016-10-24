@@ -2,8 +2,8 @@
 
 {% block body %}
     
-    <a href="{{path("formphotos")}}"><h1> ajouter un post photos</h1></a>  
-    <div class="container">
+    <a id ="lienajoutphoto" href="{{path("formphotos")}}"><h1> ajouter un post photos</h1></a>  
+    <div class="container" id="adminPhoto">
     <div class="row">
         {% for photos in annoncePhotos %}
             <div class="col-sm-6 col-md-12">
