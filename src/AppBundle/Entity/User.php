@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -25,14 +26,14 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string",nullable=true, length=255)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string",nullable=true, length=255)
+     * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
@@ -188,13 +189,20 @@ class User implements UserInterface, \Serializable
     }
 
     public function serialize() {
-        return $this->pass;
-        return $this->name;
-        return $this->pass;
-        
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->pass
+        ));
+       
     }
 
     public function unserialize($serialized) {
+        list(
+            $this->id,
+            $this->email,
+            $this->pass,
+            ) = unserialize($serialized);
         
     }
 
@@ -211,7 +219,7 @@ class User implements UserInterface, \Serializable
     }
 
     public function getUsername() {
-        return $this->name;
+        return $this->email;
     }
 
 }
