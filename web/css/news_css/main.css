@@ -34,6 +34,11 @@
   .footer .groupsocial .socialinsta:hover {
     color: #a07c62; }
 
+/*titre admin*/
+.messageBienvenue {
+  text-align: center; }
+
+/*fin titre admin*/
 .navbar {
   position: relative;
   min-height: 50px;
@@ -200,53 +205,28 @@ header {
     .footer .credit .copy {
       font-size: 20px; }
 
-/*titre admin*/
-.messageBienvenue {
-  text-align: center; }
-
-/*fin titre admin*/
 /*lien pour ajouter un evenement*/
 .lienajout {
   text-align: center; }
 
 /*fin du lien*/
-.adminEvenement div div {
-  /*Titre de l'article*/
-  /*fin titre*/
-  /*balise p qui se trouve dans la boucle for*/
-  /*fin balise*/
-  /*bouton qui permet de modifier ou suprimé*/
-  /*fin bouton*/ }
-  .adminEvenement div div h2 {
-    text-align: center; }
-  .adminEvenement div div p {
-    display: flex;
-    justify-content: center; }
-  .adminEvenement div div .bouton {
-    text-align: center;
-    margin-bottom: 30px; }
+/*bouton qui permet de modifier ou suprimé*/
+.bouton {
+  text-align: center;
+  margin-bottom: 30px; }
 
+/*fin bouton*/
 /*lien pour ajouter un evenement*/
 .lienajoutphoto {
   text-align: center; }
 
 /*fin du lien*/
-.adminPhoto div div {
-  /*titre de l'article*/
-  /*fin titre*/
-  /*balise p qui se trouve dans la boucle for*/
-  /*fin balise*/
-  /*bouton qui permet de modifier ou suprimé*/
-  /*fin bouton*/ }
-  .adminPhoto div div h2 {
-    text-align: center; }
-  .adminPhoto div div p {
-    display: flex;
-    justify-content: center; }
-  .adminPhoto div div .boutonPhoto {
-    text-align: center;
-    margin-bottom: 30px; }
+/*bouton qui permet de modifier ou suprimé*/
+.boutonPhoto {
+  text-align: center;
+  margin-bottom: 30px; }
 
+/*fin bouton*/
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates

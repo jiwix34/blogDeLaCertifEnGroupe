@@ -4,28 +4,9 @@
 }
 /*fin du lien*/
 
-.adminPhoto{
-    div{
-        div{
-            /*titre de l'article*/
-            h2{
-                text-align: center;
-            }
-            /*fin titre*/
-            
-            /*balise p qui se trouve dans la boucle for*/
-            p{
-                display:flex;
-                justify-content: center;
-            }
-            /*fin balise*/
-            
-            /*bouton qui permet de modifier ou suprimé*/
-            .boutonPhoto{
-                text-align: center;
-                margin-bottom: 30px;
-            }
-            /*fin bouton*/
-        }
-    }
+/*bouton qui permet de modifier ou suprimé*/
+.boutonPhoto{
+    text-align: center;
+    margin-bottom: 30px;
 }
+/*fin bouton*/
