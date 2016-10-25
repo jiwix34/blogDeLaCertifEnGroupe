@@ -1,16 +1,41 @@
 {%extends ":admin:index.html.twig"%}
 
-<body>
-        
-        <h1>Créer un post </h1>
-     
+
+
+{% block body %}
+    <body>
+
+        <h1>Modif Info </h1>
+
         <div class="container">
             <div class="col-sm-6 col-md-12">
-                 
-       
-        {{form_start(formphotos,{'attr':{'action':path('validphotos'),'enctype':'multipart/form-data'}})}}
-     
-           {{form_end(formphotos)}}
+
+
+                {{form_start(formUser,{'attr':{'action':path('modifUser',{'id':id}),'enctype':'multipart/form-data'}})}}
+                <div class="input-group">
+                    <span class="input-group-addon" >Nom</span>
+                    {{ form_widget(formUser.name, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon" >Email</span>
+                    {{ form_widget(formUser.email, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon" >Mot de passe</span>
+                    {{ form_widget(formUser.pass, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                <div class="input-group">
+                    <span class=" input-group-addon" >image ('Obligatoire')</span>
+                    {{ form_widget(formUser.image, { 'attr': {'class': 'form-control filestyle'} })}}
+                </div>
+{# <img class="col-lg-2" src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-rounded" >#}
+                {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-default'} })}}
+
+
+
             </div>
+     
         </div>
     </body>
+
+{% endblock %}
