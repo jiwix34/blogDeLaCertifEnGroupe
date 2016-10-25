@@ -205,28 +205,6 @@ header {
     .footer .credit .copy {
       font-size: 20px; }
 
-/*lien pour ajouter un evenement*/
-.lienajout {
-  text-align: center; }
-
-/*fin du lien*/
-/*bouton qui permet de modifier ou suprimé*/
-.bouton {
-  text-align: center;
-  margin-bottom: 30px; }
-
-/*fin bouton*/
-/*lien pour ajouter un evenement*/
-.lienajoutphoto {
-  text-align: center; }
-
-/*fin du lien*/
-/*bouton qui permet de modifier ou suprimé*/
-.boutonPhoto {
-  text-align: center;
-  margin-bottom: 30px; }
-
-/*fin bouton*/
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -258,7 +236,7 @@ and open the template in the editor.
   margin-bottom: 5%;
   margin-left: 20%;
   margin-right: 20%;
-  padding-bottom: 2%; }
+  padding-bottom: 3%; }
   .thumbnail .title {
     display: inline-block;
     font-size: 30px; }
@@ -271,5 +249,19 @@ and open the template in the editor.
   .thumbnail .suite {
     padding-top: 3%;
     color: #2ED4AD; }
+
+/*lien pour ajouter un evenement*/
+.lienajout {
+  text-align: center; }
+
+/*fin du lien*/
+/*bouton qui permet de modifier ou suprimé*/
+.bouton {
+  text-align: center;
+  margin-bottom: 30px;
+  float: right;
+  padding-top: 35px; }
+
+/*fin bouton*/
 
 /*# sourceMappingURL=main.css.map */
