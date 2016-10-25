@@ -11,23 +11,30 @@
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
     dans la section Photo#}
 
-    <div class="container">
-        <div class="row">
-            {% for photos in annoncePhotos %}
-                <div class="col-sm-6 col-md-12">
-                    <img src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">
-                    <h2>{{photos.titre}}</h2>
-                    <p>{{photos.ville}}</p>
-                    <p>{{photos.appareilPhotoUtilise}}</p>
-                    <p>{{photos.commentaire| truncate(450, true, ' ...')}}</p>
-                    <p>{{photos.date|date('d/m/y')}}</p>
-                    <p>{{photos.auteur}}</p>
-                </div>    
+    <div id="photo">
+        <div class="container-fluid photo">
+            <div class="row">
+                {% for photos in annoncePhotos %}
+                    <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
+                        <div class="thumbnail couleur">
+                            <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">  
+                            <h2 class="title">{{photos.titre}} |</h2>
+                            <p class="info">{{photos.ville}}</p>
+                            <p class="info">{{photos.appareilPhotoUtilise}}</p>
+                            <p class="title"> {{photos.date|date('d/m/y')}} |</p>
+                            <p class="title">{{photos.auteur}}</p>
+                            <div class="comm_suite">
+                                <p class="commentaire">{{photos.commentaire| truncate(450, true, ' ...')}}</p>
+                                <p class="suite"><b>Voir la suite</b></p>
+                            </div>
 
-            {% endfor %}
+                        </div>
+                    </div>    
 
+                {% endfor %}
+
+            </div>
         </div>
     </div>
-
 
 {% endblock %}

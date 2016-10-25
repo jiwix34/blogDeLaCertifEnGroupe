@@ -8,7 +8,7 @@
         margin-bottom: 5%;
         margin-left: 20%;
         margin-right: 20%;
-        padding-bottom: 6%;
+        padding-bottom: 2%;
     }
 }
 
@@ -21,18 +21,21 @@
     display: none;
 }
 
+.comm_suite{
+    margin-top: 20px;  
+}
+
 .commentaire{
-    position: absolute;
-    padding-top: -5%;
     font-size: 18px;
 }
 
 .suite{
-    position: absolute;
     padding-top: 3%;
     color: #2ED4AD;
 }
 
 .changementCouleur:nth-child(2n+1){
-    background-color: lightgrey;
+    background-color: #E5E5E5;
 }
+
+

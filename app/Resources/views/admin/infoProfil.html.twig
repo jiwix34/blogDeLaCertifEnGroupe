@@ -1,0 +1,16 @@
+{%extends ":admin:index.html.twig"%}
+
+<body>
+        
+        <h1>Créer un post </h1>
+     
+        <div class="container">
+            <div class="col-sm-6 col-md-12">
+                 
+       
+        {{form_start(formphotos,{'attr':{'action':path('validphotos'),'enctype':'multipart/form-data'}})}}
+     
+           {{form_end(formphotos)}}
+            </div>
+        </div>
+    </body>

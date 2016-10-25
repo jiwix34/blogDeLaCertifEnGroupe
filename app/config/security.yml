@@ -1,24 +1,41 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/book/security.html
 security:
-
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory:
-            memory: ~
+        gestionUser:
+            entity:
+                class: AppBundle:User
+                property: email
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
-
-            # http_basic: ~
-            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            
+        main:     
+            pattern : ^/
+            anonymous: true
+            # important !!! renseignez le provider a utiliser !
+            provider: gestionUser
+            form_login:
+                check_path: loginCheck
+                login_path: login
+                default_target_path: admin
+            logout:
+                path: loginOut
+                target: /
+           
+    
+        
+    # ici c'est le cryptage des mots de passe (ou pas)            
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: plaintext
+            ignore_case: false
+    
+     # evidement on peut jouer sur differents niveaux de restrictions   
+    access_control:   
+        # Un admin ou un user classique peut ajouter une annonce ... quelque chose d'étrange est ici ....
+        - { path: ^/admin , roles: ROLE_ADMIN }
