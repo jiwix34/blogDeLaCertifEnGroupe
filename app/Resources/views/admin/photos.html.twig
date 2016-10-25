@@ -3,25 +3,28 @@
 {% block body %}
     
     <a class="lienajoutphoto" href="{{path("formphotos")}}"><h1> ajouter un post photos</h1></a>  
-    <div class="container adminPhoto">
-    <div class="row">
-        {% for photos in annoncePhotos %}
-            <div class="col-sm-6 col-md-12">
-                <img src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">
-                <h2>{{photos.titre}}</h2>
-                <p>{{photos.ville}}</p>
-                <p>{{photos.appareilPhotoUtilise}}</p>
-                <p>{{photos.commentaire| truncate(450, true, ' ...')}}</p>
-                <p>{{photos.date|date('d/m/y')}}</p>
-                <p>{{photos.auteur}}</p>
-             </div>    
-                <div class="boutonPhoto">        
-                    <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
-                    <a type="button" class="btn btn-warning" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a> 
-                </div>  
-        {% endfor %}
-   
-    </div>
+    <div class="container-fluid photo_event">
+        <div class="row">
+            {% for photos in annoncePhotos %}
+                <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
+                    <div class="thumbnail couleur">
+                        <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">
+                        <h2 class="title">{{photos.titre}}</h2>
+                        <p>{{photos.ville}}</p>
+                        <p>{{photos.appareilPhotoUtilise}}</p>
+                        <p>{{photos.commentaire}}</p>
+                        <p class="title"> {{photos.date|date('d/m/y')}} |</p>
+                        <p class="title">{{photos.auteur}}</p>
+                    </div>    
+                    <div class="boutonPhoto">        
+                        <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
+                        <a type="button" class="btn btn-warning" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a> 
+                    </div> 
+                </div>
+                {% endfor %}
+
+            
+        </div>
     </div>
     
  {% endblock %}  
