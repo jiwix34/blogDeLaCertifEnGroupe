@@ -9,10 +9,12 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+use AppBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Description of LoginController
@@ -21,7 +23,7 @@ use Symfony\Component\Config\Definition\Exception\Exception;
  */
 class LoginController extends Controller {
     
-//    Methode Security 
+////  Methode Security 
     /**
      * @Route("loginCheck",name="loginCheck")
      * @throws Exception
@@ -39,7 +41,7 @@ class LoginController extends Controller {
         throw new Exception('Verifiez votre fichier security');
     }
     
-//    Ajouter Admin 
+/////  Ajouter Admin 
     /**
      * @Route("/add",name="add")
      * @throws Exception
@@ -55,10 +57,13 @@ class LoginController extends Controller {
         $em->flush();
         
         return $this->redirectToRoute("home");
+        
     }
     
+    
+    ////// Modification 1) Info Vue formulaire 
     /**
-     * @Route("admin/info",name="editUser")
+     * @Route("admin/info/{id}",name="editUser")
      * @Template(":admin:infoProfil.html.twig")
      */
     function editInfo($id) {
@@ -69,7 +74,7 @@ class LoginController extends Controller {
           return array("formUser"=> $f->createView(), "id"=>$id);
     }
    
-    ////// Modification Evenements FormPersist
+    ////// Modification 2) Info FormPersist
     /**
     * @Route("/admin/info/update/{id}",name="modifUser")
     * 
@@ -82,14 +87,16 @@ class LoginController extends Controller {
        if ($request->getMethod() == 'POST'){
        $f->handleRequest($request);
        
-//       $nomDuFichier = md5(uniqid()).".".$uzer->getPhoto()->getClientOriginalExtension();
-//            $uzer->getPhoto()->move('uploads/images', $nomDuFichier);
-//            $uzer->setPhoto($nomDuFichier);
-//       
+       $nomDuFichier = md5(uniqid()).".".$uzer->getImage()->getClientOriginalExtension();
+            $uzer->getImage()->move('uploads/images', $nomDuFichier);
+            $uzer->setImage($nomDuFichier);
+       
+     $uzer->setRoles(array("ROLE_ADMIN")); 
+     
        $em -> merge($uzer);
        $em->flush();
        
-       return $this->redirect($this->generateUrl('editUser'));
+       return $this->redirect($this->generateUrl('admin'));
         }
        
        }

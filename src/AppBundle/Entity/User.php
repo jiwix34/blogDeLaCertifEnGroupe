@@ -3,8 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints\File;
 
 /**
  * User
@@ -52,9 +53,10 @@ class User implements UserInterface, \Serializable
     private $roles;
     
     /**
-     * @var string
+     * @var UploadedFile
      *
-     * @ORM\Column(name="image", type="string",nullable=true, length=255)
+     * @ORM\Column(name="image", type="string", length=255)
+     * @File(mimeTypes={"images/jpeg"})
      */
     private $image;
 
