@@ -7,29 +7,30 @@
 {% endblock %}
 
 {% block section %}
-    
+
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
     dans la section Evènement#}
-    
-    <div class="container evenement">
-    <div class="row">
-        {% for evenements in annonceEvent %}
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="thumbnail">
-               <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
-                <h2 class="title">{{evenements.titre}}</h2>
-                <p class="info">{{evenements.ville}}</p>
-                <p class="info">{{evenements.lieuxExposition}}</p>
-                <p class="commentaire">{{evenements.commentaire}}</p>
-                <p class="title"> {{evenements.date|date('d/m/y')}}</p>
-                <p class="title">{{evenements.auteur}}</p>
-                <p class="suite">Voir la suite</p>
-                </div>
-             </div>    
-                
-        {% endfor %}
-   
-    </div>
+    <div id="event">
+        <div class="container-fluid evenement">
+            <div class="row">
+                {% for evenements in annonceEvent %}
+                    <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
+                        <div class="thumbnail">
+                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
+                            <h2 class="title">{{evenements.titre}}</h2>
+                            <p class="info">{{evenements.ville}}</p>
+                            <p class="info">{{evenements.lieuxExposition}}</p>
+                            <p class="commentaire">{{evenements.commentaire}}</p>
+                            <p class="title"> {{evenements.date|date('d/m/y')}}</p>
+                            <p class="title">{{evenements.auteur}}</p>
+                            <p class="suite"><b>Voir la suite</b></p>
+                        </div>
+                    </div>    
+
+                {% endfor %}
+
+            </div>
+        </div>
     </div>
 
 {% endblock %}
