@@ -2,28 +2,29 @@
 
 {% block body %}
     
-    <a href="{{path("formphotos")}}"><h1> ajouter un post photos</h1></a>  
-    <div class="container">
-    <div class="row">
-        {% for photos in brouillonPhoto %}
-            <div class="col-sm-6 col-md-12">
-                 <img src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">
-                <h2>{{photos.titre}}</h2>
-                <p>{{photos.ville}}</p>
-                <p>{{photos.appareilPhotoUtilise}}</p>
-                <p>{{photos.commentaire}}</p>
-                 <p>{{photos.date|date('d/m/y')}}</p>
-                <p>{{photos.auteur}}</p>
-             </div> 
-              <div class="bouton">        
-                    <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
-                    <a type="button" class="btn btn-warning" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a>
-                    <a type="button" class="btn btn-success" href="{{path('photoBrouEdit',{'id':photos.id})}}">Mettre en Editer</a>
-                </div>  
-                
-        {% endfor %}
-   
-    </div>
+    <a class="lienajout" href="{{path("formphotos")}}"><h1> ajouter un post photo</h1></a>  
+    <div class="container-fluid photo_event">
+        <div class="row">
+            {% for photos in brouillonPhoto %}
+                <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
+                    <div class="thumbnail couleur">
+                        <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive"/>
+                        <h2 class="title">{{photos.titre}}</h2>
+                        <p>{{photos.ville}}</p>
+                        <p>{{photos.appareilPhotoUtilise}}</p>
+                        <p>{{photos.commentaire}}</p>
+                        <p class="title"> {{photos.date|date('d/m/y')}} |</p>
+                        <p class="title">{{photos.auteur}}</p> 
+                        <div class="bouton">        
+                            <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
+                            <a type="button" class="btn btn-info" href="{{path('photoBrouEdit',{'id':photos.id})}}">Mettre en Editer</a>
+                            <a type="button" class="btn btn-danger" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a>
+                        </div>
+                    </div>  
+                </div>
+            {% endfor %}
+
+        </div>
     </div>
     
  {% endblock %}  

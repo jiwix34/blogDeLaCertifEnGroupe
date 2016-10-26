@@ -10,7 +10,7 @@
                     <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
                         <div class="thumbnail couleur">
                             <img src="" class="img-responsive">
-                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">
+                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive"/>
                             <h2 class="title">{{evenements.titre}} |</h2>
                             <p class="info">{{evenements.ville}}</p>
                             <p class="info">{{evenements.lieuxExposition}}</p>
@@ -28,4 +28,5 @@
                     {%endfor%}
             </div>
         </div>
+    </div>
         {% endblock %}

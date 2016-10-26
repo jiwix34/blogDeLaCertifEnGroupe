@@ -15,7 +15,7 @@
     <body>
         
         <div class="messageBienvenue">
-            <h1>hello compere</h1>
+            <h1>Salut {{(app.user.name)}} </h1>
         </div><!---------fin-blog------------->
         <nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
             <div class="container-fluid">
@@ -29,14 +29,16 @@
                 </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a class="js-scrollTo" href="#">Accueil<span class="sr-only"></span></a></li>
+                                <img class="col-lg-1" src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-circle" height="100" >
+                                <li><a class="js-scrollTo" href="{{path('admin')}}">Accueil<span class="sr-only"></span></a></li>
                                 <li><a class="js-scrollTo" href="{{path('annoncePhotos')}}">Photos</a></li>
                                 <li><a class="js-scrollTo" href="{{path('annonceEvent')}}">Evènements</a></li>
-                                <li><a class="js-scrollTo" href="#">Mon Compte</a></li>
-                                <li><a class="js-scrollTo" href="#">Se Déconnecter</a></li>
+                                <li><a class="js-scrollTo" href="{{path('editUser',{'id':(app.user.id)})}}">Mon Compte</a></li>
+                                <li><a class="js-scrollTo" href="{{path('loginOut')}}">Se Déconnecter</a></li>
                             </ul>
                         </div>
                     </div>
+                            
                 </nav>
 {% block body %}
     
