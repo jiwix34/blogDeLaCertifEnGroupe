@@ -11,7 +11,6 @@
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
     dans la section Photo#}
 
-    <div id="photo">
         <div class="container-fluid photo_event">
             <div class="row">
                 {% for photos in annoncePhotos %}
@@ -25,7 +24,7 @@
                             <p class="title">{{photos.auteur}}</p>
                             <div class="comm_suite">
                                 <p class="commentaire">{{photos.commentaire| truncate(450, true, ' ...')}}</p>
-                                <p class="suite"><a href="{{path('detailphoto')}}"><b>Voir la suite</b></a></p>
+                                <p class="suite"><a href="{{path('detailphoto',{'id':photos.id})}}">Voir la suite</a></p>
                             </div>
 
                         </div>
@@ -35,6 +34,5 @@
 
             </div>
         </div>
-    </div>
 
 {% endblock %}

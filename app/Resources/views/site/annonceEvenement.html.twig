@@ -10,7 +10,6 @@
 
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
     dans la section Evènement#}
-    <div id="event">
         <div class="container-fluid photo_event">
             <div class="row">
                 {% for evenements in annonceEvent %}
@@ -24,7 +23,7 @@
                             <p class="title">{{evenements.auteur}}</p>
                             <div class="comm_suite">
                                 <p class="commentaire">{{evenements.commentaire| truncate(450, true, ' ...')}}</p>
-                                <p class="suite"><a href="{{path('detailevenement')}}"><b>Voir la suite</b></a></p>
+                                <p class="suite"><a href="{{path('detailevenement', {'id':evenements.id})}}">Voir la suite</a></p>
                             </div>
 
                         </div>
@@ -34,6 +33,5 @@
 
             </div>
         </div>
-    </div>
 
 {% endblock %}

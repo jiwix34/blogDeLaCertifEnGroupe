@@ -54,22 +54,24 @@ class SiteController extends Controller {
       
  }
   /**
- * @Route("/annonce/evenement/detail",name="detailevenement")
+ * @Route("/annonce/evenement/detail/{id}",name="detailevenement")
  * @Template(":site:detailEvenement.html.twig")
  */
- public function detailEvenement(){
+ public function detailEvenement($id){
      
         $em = $this->getDoctrine();
-        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'));
+ $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1',
+                                                                    'id'=>$id));
         return array("annonceEvent" => $event);
  }
  /**
- * @Route("/annonce/photo/detail",name="detailphoto")
+ * @Route("/annonce/photo/detail/{id}",name="detailphoto")
  * @Template(":site:detailPhoto.html.twig")
  */
- public function detailPhoto(){
+ public function detailPhoto($id){
       $em = $this->getDoctrine();
-        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'));
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1',
+                                                                       'id'=>$id));
       
       return array ('annoncePhotos' => $photos);
  }
