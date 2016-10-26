@@ -4,14 +4,106 @@
     
     <body>
         
-        <h1>Créer un post </h1>
+        <h1>Ajouter un nouveaux événement</h1>
      
-        <div class="container">
-            <div class="col-sm-6 col-md-12">
+        <div class="container ">
+            <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2 col-sm-offset-1 col-sm-10 col-sm-offset-1 ">
                 {% if id is defined %}
+{#////////Formulaire Edite
                 {{form_start(formEvent,{'attr':{'action':path('modifEvent',{'id':id}),'enctype':'multipart/form-data'}})}}
+            {#////// photo#}
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Photo</span>
+                    {{ form_widget(formEvent.photo, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                {#////// titre#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Titre</span>
+                    {{ form_widget(formEvent.titre, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// lieuxExposition#}    
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Lieux</span>
+                    {{ form_widget(formEvent.lieuxExposition, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// ville#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Ville</span>
+                    {{ form_widget(formEvent.ville, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// commentaire#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Commentaire</span>
+                    {{ form_widget(formEvent.commentaire, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// date#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Date</span>
+                    {{ form_widget(formEvent.date, { 'attr': {'class': 'form-control'} })}}
+                </div> 
+                
+            {#////// auteur#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Auteur</span>
+                    {{ form_widget(formEvent.auteur, { 'attr': {'class': 'form-control'} })}}
+                </div> 
+            {#////// publier#}   
+                <div class=" col-lg-8 input-group formEvent">
+                    <span class="input-group-addon" >Publier</span>
+                    {{ form_widget(formEvent.publier)}}
+                    
+                </div> 
+            {#////// envoyer#}   
+                {{ form_widget(formEvent.envoyer, { 'attr': {'class': 'btn btn-default'} })}}   
+                
                 {% else %}
-                {{form_start(formEvent,{'attr':{'action':path('valideEvent'),'enctype':'multipart/form-data'}})}}
+{#////////Formulaire Ajout
+#}                {{form_start(formEvent,{'attr':{'action':path('valideEvent'),'enctype':'multipart/form-data'}})}}
+                {#////// photo#}
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Photo</span>
+                    {{ form_widget(formEvent.photo, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                {#////// titre#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Titre</span>
+                    {{ form_widget(formEvent.titre, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// lieuxExposition#}    
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Lieux</span>
+                    {{ form_widget(formEvent.lieuxExposition, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// ville#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Ville</span>
+                    {{ form_widget(formEvent.ville, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// commentaire#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Commentaire</span>
+                    {{ form_widget(formEvent.commentaire, { 'attr': {'class': 'form-control'} })}}
+                </div>
+            {#////// date#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Date</span>
+                    {{ form_widget(formEvent.date, { 'attr': {'class': 'form-control'} })}}
+                </div> 
+                
+            {#////// auteur#}   
+                <div class="input-group formEvent">
+                    <span class="input-group-addon" >Auteur</span>
+                    {{ form_widget(formEvent.auteur, { 'attr': {'class': 'form-control'} })}}
+                </div> 
+            {#////// publier#}   
+                <div class="  input-group  formEvent">
+                    <span class="input-group-addon" >Publier</span>
+                    {{ form_widget(formEvent.publier)}}
+                </div> 
+            {#////// envoyer#}   
+            <div class="col-xs-offset-5 checkbox disabled">
+                {{ form_widget(formEvent.envoyer, { 'attr': {'class': 'btn btn-default'} })}}   
+            </div>    
                 {% endif %}
                 {{form_end(formEvent)}}
             </div>
