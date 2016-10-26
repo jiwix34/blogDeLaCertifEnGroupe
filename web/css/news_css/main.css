@@ -46,7 +46,7 @@
   border: 0px solid transparent; }
 
 .navbar-min {
-  position: relative;
+  /*    position: relative;*/
   min-height: 25px;
   transition: 0.4s; }
 
@@ -172,9 +172,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   transition: 0.3s; }
 
 .navbar-brand-min {
+  background-image: url("../../images/logo-min.png");
+  background-repeat: no-repeat;
+  width: 100%;
   line-height: 10px;
-  height: 10px;
-  transition: 0.3s; }
+  height: 55px;
+  transition: 0.3s;
+  margin-bottom: 5px; }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -187,7 +191,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px; } }
-header {
+.navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+  background: rgba(255, 255, 255, 0.9); }
+
+.header {
   position: relative; }
 
 .header-img {
