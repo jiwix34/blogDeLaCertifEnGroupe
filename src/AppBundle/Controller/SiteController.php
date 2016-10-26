@@ -31,7 +31,7 @@ class SiteController extends Controller {
  }
  
  /**
- * @Route("/annoncePhoto",name="photo")
+ * @Route("/annonce/photo",name="photo")
  * @Template(":site:annoncePhoto.html.twig")
  */
  public function annoncePhoto (){
@@ -43,7 +43,7 @@ class SiteController extends Controller {
  }
  
  /**
- * @Route("/annonceEvenement",name="evenement")
+ * @Route("/annonce/evenement",name="evenement")
  * @Template(":site:annonceEvenement.html.twig")
  */
  public function annonceEvenement (){
@@ -52,6 +52,26 @@ class SiteController extends Controller {
         $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'));
         return array("annonceEvent" => $event);
       
+ }
+  /**
+ * @Route("/annonce/evenement/detail",name="detailevenement")
+ * @Template(":site:annonceEvenement.html.twig")
+ */
+ public function detailEvenement(){
+     
+        $em = $this->getDoctrine();
+        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'));
+        return array("annonceEvent" => $event);
+ }
+ /**
+ * @Route("/annonce/photo/detail",name="detailphoto")
+ * @Template(":site:annoncePhoto.html.twig")
+ */
+ public function detailPhoto(){
+      $em = $this->getDoctrine();
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'));
+      
+      return array ('annoncePhotos' => $photos);
  }
  
  /**
