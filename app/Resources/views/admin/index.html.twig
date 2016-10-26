@@ -29,10 +29,7 @@
                 </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                
-{# Recup le nom de l'image via la session #}
-                                <img  src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img" height="100" width="100" >
-                                
+                                <img class="col-lg-1" src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-circle" height="100" >
                                 <li><a class="js-scrollTo" href="{{path('admin')}}">Accueil<span class="sr-only"></span></a></li>
                                 <li><a class="js-scrollTo" href="{{path('annoncePhotos')}}">Photos</a></li>
                                 <li><a class="js-scrollTo" href="{{path('annonceEvent')}}">Evènements</a></li>

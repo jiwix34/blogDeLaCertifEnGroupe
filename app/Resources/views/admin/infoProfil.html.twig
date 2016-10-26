@@ -9,34 +9,30 @@
 
         <div class="container">
             <div class="col-sm-6 col-md-12">
- <div>
-                <p>* Champ obligatoire</p>
-                </div>
-{#Form de modification d'info #}
+
+
                 {{form_start(formUser,{'attr':{'action':path('modifUser',{'id':id}),'enctype':'multipart/form-data'}})}}
-           {# Le nom #}
                 <div class="input-group">
                     <span class="input-group-addon" >Nom</span>
                     {{ form_widget(formUser.name, { 'attr': {'class': 'form-control'} })}}
                 </div>
-           {#  L'email #}  
                 <div class="input-group">
-                    <span class="input-group-addon" >* Email</span>
+                    <span class="input-group-addon" >Email</span>
                     {{ form_widget(formUser.email, { 'attr': {'class': 'form-control'} })}}
                 </div>
-           {# Le Pass #} 
                 <div class="input-group">
-                    <span class="input-group-addon" >* Mot de passe</span>
+                    <span class="input-group-addon" >Mot de passe</span>
                     {{ form_widget(formUser.pass, { 'attr': {'class': 'form-control'} })}}
                 </div>
-           {# L'image #}   
                 <div class="input-group">
-                    <span class=" input-group-addon" >* Avatar</span>
+                    <span class=" input-group-addon" >image ('Obligatoire')</span>
                     {{ form_widget(formUser.image, { 'attr': {'class': 'form-control filestyle'} })}}
-                   
                 </div>
+{# <img class="col-lg-2" src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-rounded" >#}
                 {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-default'} })}}
-               
+
+
+
             </div>
      
         </div>
