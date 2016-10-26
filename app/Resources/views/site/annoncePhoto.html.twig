@@ -25,7 +25,7 @@
                             <p class="title">{{photos.auteur}}</p>
                             <div class="comm_suite">
                                 <p class="commentaire">{{photos.commentaire| truncate(450, true, ' ...')}}</p>
-                                <p class="suite"><b>Voir la suite</b></p>
+                                <p class="suite"><a href="{{path('detailphoto')}}"><b>Voir la suite</b></a></p>
                             </div>
 
                         </div>
