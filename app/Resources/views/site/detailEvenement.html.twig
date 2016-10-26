@@ -1,1 +1,36 @@
-{# empty Twig template #}
+{% extends ':site:index.html.twig' %}
+
+{% block header %}
+    <div class="header">
+        <img class="header-img" src="{{asset('./images/fond-page-photos.jpg')}}" />
+    </div>
+{% endblock %}
+
+{% block section %}
+
+    {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
+    dans la section Photo#}
+
+    <div id="photo">
+        <div class="container-fluid detail">
+            <div class="row">
+                {% for evenements in annonceEvent %}
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="thumbnail">
+                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
+                            <h2 class="title">{{evenements.titre}} |</h2>
+                            <p class="lieu">{{evenements.lieuxExposition}}</p>
+                            <p class="commentaire">{{evenements.commentaire}}</p>
+                            <p class="date"> {{evenements.date|date('d/m/y')}} |</p>
+                            <p class="ville">{{evenements.ville}}</p>
+                            <p class="auteur">{{evenements.auteur}}</p>
+                        </div>
+                    </div>    
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
