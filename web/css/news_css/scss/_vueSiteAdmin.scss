@@ -1,4 +1,4 @@
-/*lien pour ajouter un evenement*/
+/*lien pour ajouter un evenement et photo*/
 .lienajout{
     text-align: center;
 }
@@ -12,55 +12,67 @@
     padding-top: 35px;
 }
 /*fin bouton*/
-.boutonConnexion{
-    text-align: center;
-    margin-bottom: 30px;
-    float: right;
-    padding-top: 15px;
-    margin-right: -11px;
-}
-.englobe{
-    background-color: rgba(255, 255, 255, 0.7);
-    padding-top: 50px;
-    padding-bottom: 50px;
-    width: 100%;
-    height: 220px;
-    border-radius: 10px;
-    border: 3px solid #fff;
-    
-}
 
 
-.form-group {
-  margin-bottom: 15px;
-}
 
+/*entete du login retiré*/
 .headerConnexion{
     display: none;
 }
+/*fin entete*/
 
-.imagelogin{
-background-image: url('../../images/fond-home.jpg');
-background-size: cover;
-width: 100%;
-padding-top: 100px;
-padding-bottom: 100px;
-padding-right: 350px;
-padding-left: 350px;
-}
-
+/*titre centré*/
 .titre-connexion{
-        text-align: center;
+    text-align: center;
 }
+/*fin du titre*/
 
-@media screen and(min-width: 320px)and(max-width: 768px){
-    .imagelogin{
-background-image: url('../../images/fond-home.jpg');
-background-size: cover;
-width: 100%;
-padding-top: 100px;
-padding-bottom: 100px;
-padding-right: 50px;
-padding-left: 50px;
-}
+/*arriere plan derriere content-connexion*/
+.imagelogin{
+    background-image: url('../../images/fond-home.jpg');
+    background-size: cover;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 350px;
+    padding-left: 350px;
+    /*fin arriere plan*/
+
+    /*responsive arriere plan*/
+    @media screen and(min-width: 320px)and(max-width: 768px){
+        .imagelogin{
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+    }
+    /*fin responsive arriere plan*/
+
+    /*div qui englobe les champ et bouton*/
+    .content-connexion{
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 100%;
+        height: 220px;
+        border-radius: 10px;
+        border: 3px solid #fff;
+        
+        /*bouton connexion*/
+        .boutonConnexion{
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 15px;
+        }
+        /*fin bouton*/
+        
+        /*responsive bouton connexion*/
+        @media screen and(min-width: 768px){
+            .boutonConnexion{
+                text-align: right;
+                padding-top: 15px;
+            }
+        }
+        /*fin responsive bouton*/
+    }
+    /*fin div*/
 }
