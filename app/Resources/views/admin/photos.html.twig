@@ -2,24 +2,25 @@
 
 {% block body %}
     
-    <a class="lienajoutphoto" href="{{path("formphotos")}}"><h1> ajouter un post photos</h1></a>  
+    <a class="lienajout" href="{{path("formphotos")}}"><h1> ajouter un post photo</h1></a>  
     <div class="container-fluid photo_event">
         <div class="row">
             {% for photos in annoncePhotos %}
                 <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
                     <div class="thumbnail couleur">
-                        <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">
+                        <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive"/>
                         <h2 class="title">{{photos.titre}}</h2>
                         <p>{{photos.ville}}</p>
                         <p>{{photos.appareilPhotoUtilise}}</p>
                         <p>{{photos.commentaire}}</p>
                         <p class="title"> {{photos.date|date('d/m/y')}} |</p>
                         <p class="title">{{photos.auteur}}</p>
+                        <div class="bouton">                                                   
+                            <a type="button" class="btn btn-success">Publier</a>
+                            <a type="button" class="btn btn-info" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
+                            <a type="button" class="btn btn-danger" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a> 
+                        </div>
                     </div>    
-                    <div class="boutonPhoto">        
-                        <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
-                        <a type="button" class="btn btn-warning" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a> 
-                    </div> 
                 </div>
                 {% endfor %}
 

@@ -45,6 +45,11 @@
   margin-bottom: 0px;
   border: 0px solid transparent; }
 
+.navbar-min {
+  position: relative;
+  min-height: 25px;
+  transition: 0.4s; }
+
 .navbar-default {
   background-color: white;
   border-color: white; }
@@ -75,6 +80,12 @@
 .navbar-default .navbar-nav > li > a {
   color: black;
   font-size: 20px; }
+
+.navbar-default.navbar-nav-min li a {
+  font-size: 18px;
+  padding-top: 0px;
+  line-height: 0px;
+  transition: 0.4s; }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -157,7 +168,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
-  height: 50px; }
+  height: 50px;
+  transition: 0.3s; }
+
+.navbar-brand-min {
+  line-height: 10px;
+  height: 10px;
+  transition: 0.3s; }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -205,28 +222,6 @@ header {
     .footer .credit .copy {
       font-size: 20px; }
 
-/*lien pour ajouter un evenement*/
-.lienajout {
-  text-align: center; }
-
-/*fin du lien*/
-/*bouton qui permet de modifier ou suprimé*/
-.bouton {
-  text-align: center;
-  margin-bottom: 30px; }
-
-/*fin bouton*/
-/*lien pour ajouter un evenement*/
-.lienajoutphoto {
-  text-align: center; }
-
-/*fin du lien*/
-/*bouton qui permet de modifier ou suprimé*/
-.boutonPhoto {
-  text-align: center;
-  margin-bottom: 30px; }
-
-/*fin bouton*/
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -258,7 +253,7 @@ and open the template in the editor.
   margin-bottom: 5%;
   margin-left: 20%;
   margin-right: 20%;
-  padding-bottom: 2%; }
+  padding-bottom: 3%; }
   .thumbnail .title {
     display: inline-block;
     font-size: 30px; }
@@ -271,5 +266,19 @@ and open the template in the editor.
   .thumbnail .suite {
     padding-top: 3%;
     color: #2ED4AD; }
+
+/*lien pour ajouter un evenement*/
+.lienajout {
+  text-align: center; }
+
+/*fin du lien*/
+/*bouton qui permet de modifier ou suprimé*/
+.bouton {
+  text-align: center;
+  margin-bottom: 30px;
+  float: right;
+  padding-top: 35px; }
+
+/*fin bouton*/
 
 /*# sourceMappingURL=main.css.map */

@@ -10,21 +10,23 @@
                     <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
                         <div class="thumbnail couleur">
                             <img src="" class="img-responsive">
-                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">
+                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive"/>
                             <h2 class="title">{{evenements.titre}} |</h2>
                             <p class="info">{{evenements.ville}}</p>
                             <p class="info">{{evenements.lieuxExposition}}</p>
                             <p>{{evenements.commentaire}}</p>
                             <p class="title"> {{evenements.date|date('d/m/y')}} |</p>
                             <p class="title">{{evenements.auteur}}</p>
-                        </div>
-                        <div class="bouton">                                                   
-                            <a type="button" class="btn btn-warning" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
-                            <a type="button" class="btn btn-success" href="{{path('editEvent',{'id':evenements.id})}}">Modif</a>
-                        </div> 
+                            <div class="bouton">                                                   
+                                <a type="button" class="btn btn-success">Publier</a>
+                                <a type="button" class="btn btn-info" href="{{path('editEvent',{'id':evenements.id})}}">Modifier</a>
+                                <a type="button" class="btn btn-danger" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
+                            </div> 
+                        </div>                           
                     </div>
 
                     {%endfor%}
             </div>
         </div>
+    </div>
         {% endblock %}
