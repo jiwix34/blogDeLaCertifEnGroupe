@@ -2,13 +2,13 @@
 
 {% block body %}
     
-    <a class="lienajout" href="{{path("formphotos")}}"><h1> ajouter un post photos</h1></a>  
+    <a class="lienajout" href="{{path("formphotos")}}"><h1> ajouter un post photo</h1></a>  
     <div class="container-fluid photo_event">
         <div class="row">
             {% for photos in annoncePhotos %}
                 <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
                     <div class="thumbnail couleur">
-                        <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive">
+                        <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive"/>
                         <h2 class="title">{{photos.titre}}</h2>
                         <p>{{photos.ville}}</p>
                         <p>{{photos.appareilPhotoUtilise}}</p>
