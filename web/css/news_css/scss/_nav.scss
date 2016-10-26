@@ -4,6 +4,13 @@
     margin-bottom: 0px;
     border: 0px solid transparent;
 }
+//------------min--------------//
+.navbar-min {
+    position: relative;
+    min-height: 25px;
+    transition: 0.4s;
+}
+//------------min--------------//
 .navbar-default {
     background-color: white;
     border-color: white;
@@ -38,6 +45,14 @@
     color: black;
     font-size: 20px;
 }
+//----------min--------------//
+.navbar-default.navbar-nav-min li a {
+ font-size: 18px;
+ padding-top: 0px;
+ line-height: 0px;
+  transition:  0.4s;
+}
+//----------min--------------//
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -124,7 +139,16 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     font-size: 18px;
     line-height: 20px;
     height: 50px;
+    transition: 0.3s;
 }
+//------min-------------//
+.navbar-brand-min {
+    line-height: 10px;
+    height: 10px;
+    transition: 0.3s;
+}
+
+//------min-------------//
 .navbar-brand:hover,
 .navbar-brand:focus {
     text-decoration: none;
