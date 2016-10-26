@@ -55,7 +55,7 @@ class SiteController extends Controller {
  }
   /**
  * @Route("/annonce/evenement/detail",name="detailevenement")
- * @Template(":site:annonceEvenement.html.twig")
+ * @Template(":site:detailEvenement.html.twig")
  */
  public function detailEvenement(){
      
@@ -65,7 +65,7 @@ class SiteController extends Controller {
  }
  /**
  * @Route("/annonce/photo/detail",name="detailphoto")
- * @Template(":site:annoncePhoto.html.twig")
+ * @Template(":site:detailPhoto.html.twig")
  */
  public function detailPhoto(){
       $em = $this->getDoctrine();
