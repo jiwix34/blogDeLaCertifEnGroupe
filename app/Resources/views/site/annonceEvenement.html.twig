@@ -13,14 +13,14 @@
         <div class="container-fluid photo_event">
             <div class="row">
                 {% for evenements in annonceEvent %}
-                    <div class="changementCouleur col-sm-6 col-md-4">
-                        <div class="thumbnail couleur">
+                    <div class="changementCouleur col-sm-6 col-md-4 event">
+                        <div class="thumbnail thumbEvent">
                             <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
-                            <h2 class="title">{{evenements.titre}} |</h2>
+                            <h2 class="titleEvent">{{evenements.titre}} |</h2>
                             <p class="info">{{evenements.ville}}</p>
                             <p class="info">{{evenements.lieuxExposition}}</p>
-                            <p class="title"> {{evenements.date|date('d/m/y')}} |</p>
-                            <p class="title">{{evenements.auteur}}</p>
+                            <p class="titleEvent"> {{evenements.date|date('d/m/y')}} |</p>
+                            <p class="titleEvent">{{evenements.auteur}}</p>
                             <div class="comm_suite">
                                 <p class="commentaire">{{evenements.commentaire| truncate(150, true, ' ...')}}</p>
                                 <p class="suite"><a href="{{path('detailevenement', {'id':evenements.id})}}">Voir la suite</a></p>

@@ -260,15 +260,29 @@ and open the template in the editor.
   .thumbnail .comm_suite {
     margin-top: 20px; }
   .thumbnail .commentaire {
-    font-size: 18px; }
-  .thumbnail .suite {
+    font-size: 18px;
+    text-align: justify; }
+  .thumbnail .suite > a {
     font-size: 18px;
     padding-top: 3%;
-    color: #21A98A; }
+    color: #2ed4ad;
+    text-decoration: none; }
 
 .couleur {
   background-color: transparent;
   border: none; }
+
+.event {
+  height: 600px; }
+
+.thumbEvent {
+  margin-top: 15%;
+  margin-bottom: 10%; }
+
+.titleEvent {
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold; }
 
 /*lien pour ajouter un evenement et photo*/
 .lienajout {
