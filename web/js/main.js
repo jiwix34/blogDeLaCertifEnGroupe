@@ -7,8 +7,8 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         $('.titre').css({
-            right: ($('#header-home').width() - $('.titre').outerWidth()) / 2,
-            top: ($('#header-home').height() - $('.titre').outerHeight()) / 2
+            right: ($('#header-content').width() - $('.titre').outerWidth()) / 2,
+            top: ($('#header-content').height() - $('.titre').outerHeight()) / 2
         });
     });
 
