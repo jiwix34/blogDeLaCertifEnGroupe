@@ -1,69 +1,59 @@
 {% extends ':site:index.html.twig' %}
+{% block header %}
+    <div class="headerConnexion" id="header-home">
+        <img class="header-img" src="{{asset('./images/fond-home.jpg')}}" />
+        <div class="titre">
+            <img class="img-responsive"src="{{asset('./images/visu-logo-home.png')}}" />
+        </div>
+    </div>
 
+
+{% endblock %}
 {% block section %}
     
     {#Page pour se connecter#}
     
-    <div class="">
-            <div class="container-fluid"> 
-                <div class="">
-                    <h1>Connexion</h1>
+    <div class="titre-connexion">
+        <h1>Connexion</h1>
+    </div>
+    <div class="imagelogin">
+
+        <div class="content-connexion">
+            {#Champ pour mettre l'email#}
+            <form action="{{path('loginCheck',{}) }}" method="post">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-xs-12 control-label"></label>
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="text" id="nom" name="_username" placeholder="Nom d'utilisateur" class="form-control" value=""/>
+                        </div>
+                    </div>
                 </div>
 
-                    {#Champ pour mettre l'email#}
-             <form action="{{path('loginCheck',{}) }}" method="post">
+                {#Champ pour mettre le mot de passe#}
+
+                <div class="form-group">
+                    <label for="inputPassword" class="col-xs-12 control-label"></label>
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            <input type="password" id="pass" name="_password" placeholder="Mot de passe" class="form-control" value=""/>
+                        </div>
+                    </div>
+                </div>
+                    {#Bouton connexion#}
+                
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
                         <div class="form-group">
-                            <label for="inputEmail" class="col-sm-2 control-label"></label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                    <input type="text" id="nom" name="_username" placeholder="Nom d'utilisateur" class="form-control" value=""/>
-                                </div>
+                            <div class="boutonConnexion">
+                                <input type="submit" class="btn btn-default" value="connexion" />
                             </div>
                         </div>
-                        
-                        {#Champ pour mettre le mot de passe#}
-                        
-                        <div class="form-group">
-                            <label for="inputPassword" class="col-sm-2 control-label"></label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                    <input type="password" id="pass" name="_password" placeholder="Mot de passe" class="form-control" value=""/>
-                                </div>
-                            </div>
-                            
-                            {#Case à cocher pour se souvenir de l'utilisateur#}
-                         {#   
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Se souvenir de moi
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            #}
-                            {#Bouton connexion#}
-                            
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <input type="submit" class="btn btn-default" value="connexion" />
-                                </div>
-                            </div>
-                            </div>
-                    </form>
-                {#<div class="">
-                    <form action="{{path('loginCheck',{}) }}" method="post">
-                    <input type="text" id="nom" name="_username" placeholder="Nom d'utilisateur" value=""/>
-                    <input type="password" id="pass" name="_password" placeholder="Mot de passe" value=""/>
-                    <input type="submit" value="se connecter"/>
-                </form>
-                
-
-            </div>#}
+                    </div>
+            </form>
         </div>
-    </div>
 
+
+    </div>
 {% endblock %}

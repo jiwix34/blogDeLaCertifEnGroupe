@@ -256,7 +256,8 @@ and open the template in the editor.
   padding-bottom: 3%; }
   .thumbnail .title {
     display: inline-block;
-    font-size: 30px; }
+    font-size: 30px;
+    font-weight: bold; }
   .thumbnail .info {
     display: none; }
   .thumbnail .comm_suite {
@@ -264,15 +265,16 @@ and open the template in the editor.
   .thumbnail .commentaire {
     font-size: 18px; }
   .thumbnail .suite {
+    font-size: 18px;
     padding-top: 3%;
-    color: #2ED4AD; }
+    color: #21A98A; }
 
-/*lien pour ajouter un evenement*/
+/*lien pour ajouter un evenement et photo*/
 .lienajout {
   text-align: center; }
 
 /*fin du lien*/
-/*bouton qui permet de modifier ou suprimé*/
+/*bouton qui permet de publer, modifier ou suprimé*/
 .bouton {
   text-align: center;
   margin-bottom: 30px;
@@ -280,21 +282,87 @@ and open the template in the editor.
   padding-top: 35px; }
 
 /*fin bouton*/
+/*entete du login retiré*/
+.headerConnexion {
+  display: none; }
+
+/*fin entete*/
+/*titre centré*/
+.titre-connexion {
+  text-align: center; }
+
+/*fin du titre*/
+/*arriere plan derriere content-connexion*/
+.imagelogin {
+  background-image: url("../../images/fond-home.jpg");
+  background-size: cover;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-right: 350px;
+  padding-left: 350px;
+  /*fin arriere plan*/
+  /*responsive arriere plan*/
+  /*fin responsive arriere plan*/
+  /*div qui englobe les champ et bouton*/
+  /*fin div*/ }
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    .imagelogin .imagelogin {
+      padding-right: 50px;
+      padding-left: 50px; } }
+  .imagelogin .content-connexion {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    /*bouton connexion*/
+    /*fin bouton*/
+    /*responsive bouton connexion*/
+    /*fin responsive bouton*/ }
+    .imagelogin .content-connexion .boutonConnexion {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-top: 15px; }
+    @media screen and (min-width: 768px) {
+      .imagelogin .content-connexion .boutonConnexion {
+        text-align: right;
+        padding-top: 15px; } }
+
 .detail {
   text-align: left;
   margin-left: 5%;
   margin: 0; }
 
-.thumbnail {
+.detailPage {
   margin-top: 3%;
   margin-bottom: 5%;
   margin-left: 20%;
   margin-right: 20%;
-  padding-bottom: 3%; }
-  .thumbnail .title {
+  padding-bottom: 115px; }
+  .detailPage .titledetail {
     display: inline-block;
-    font-size: 30px; }
-  .thumbnail .commentaire {
-    font-size: 18px; }
+    font-size: 35px;
+    font-weight: bold; }
+  .detailPage .appareil {
+    font-size: 17px; }
+  .detailPage .lieu {
+    font-size: 17px; }
+  .detailPage .commentaire {
+    font-size: 20px; }
+  .detailPage .renseignement {
+    font-size: 17px;
+    float: right;
+    padding-right: 10px;
+    padding-top: 20px; }
+
+.boutonDetail {
+  width: 100px;
+  font-size: 18px;
+  float: right;
+  margin-right: 50px;
+  margin-bottom: 50px; }
 
 /*# sourceMappingURL=main.css.map */
