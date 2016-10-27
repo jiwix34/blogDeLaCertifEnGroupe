@@ -22,7 +22,7 @@
                             <p class="title"> {{evenements.date|date('d/m/y')}} |</p>
                             <p class="title">{{evenements.auteur}}</p>
                             <div class="comm_suite">
-                                <p class="commentaire">{{evenements.commentaire| truncate(450, true, ' ...')}}</p>
+                                <p class="commentaire">{{evenements.commentaire| truncate(150, true, ' ...')}}</p>
                                 <p class="suite"><a href="{{path('detailevenement', {'id':evenements.id})}}">Voir la suite</a></p>
                             </div>
 
