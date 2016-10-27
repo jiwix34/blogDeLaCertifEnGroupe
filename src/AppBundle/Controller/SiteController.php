@@ -30,7 +30,7 @@ class SiteController extends Controller {
       $em = $this->getDoctrine();
         $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'),
         //filtrage par date croissant
-        array('date'=>'DESC'));
+        array('date'=>'DESC'),3);
       return array ('annoncePhotos' => $photos); 
  }
  
