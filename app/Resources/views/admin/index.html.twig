@@ -63,7 +63,20 @@
         {% block body %}
 
         {% endblock %}
-
+                {% for photos in annoncePhotos %}
+                <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
+                    <div class="thumbnail couleur">
+                        <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive"/>
+                        <h2 class="title">{{photos.titre}}</h2>
+                        <p>{{photos.ville}}</p>
+                        <p>{{photos.appareilPhotoUtilise}}</p>
+                        <p>{{photos.commentaire}}</p>
+                        <p class="title"> {{photos.date|date('d/m/y')}} |</p>
+                        <p class="title">{{photos.auteur}}</p>
+                    </div>    
+                </div>
+                {% endfor %}
+                
         <script type="text/javascript" src="{{asset('./js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('./js/bootstrap.min.js')}}"></script>
 

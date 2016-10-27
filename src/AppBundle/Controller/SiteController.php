@@ -27,7 +27,11 @@ class SiteController extends Controller {
  * @Template(":site:index.html.twig")
  */
  public function homeSite(){
-     
+      $em = $this->getDoctrine();
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'),
+        //filtrage par date croissant
+        array('date'=>'DESC'));
+      return array ('annoncePhotos' => $photos); 
  }
  
  /**
