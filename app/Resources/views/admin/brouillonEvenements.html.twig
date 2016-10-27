@@ -6,7 +6,7 @@
             <div class="row">
                 {% for evenements in brouillonEvents %}
                     <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
-                        <div class="thumbnail couleur">
+                        <div class="thumbnail">
                             <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive"/>
                             <h2 class="title">{{evenements.titre}} |</h2>
                             <p class="info">{{evenements.ville}}</p>
@@ -15,8 +15,8 @@
                             <p class="title"> {{evenements.date|date('d/m/y')}} |</p>
                             <p class="title">{{evenements.auteur}}</p>
                             <div class="bouton">
-                                <a type="button" class="btn btn-success" href="{{path('eventBrouEdit',{'id':evenements.id})}}">Publier</a>
                                 <a type="button" class="btn btn-info" href="{{path('editEvent',{'id':evenements.id})}}">Modifier</a>
+                                <a type="button" class="btn btn-success" href="{{path('eventBrouEdit',{'id':evenements.id})}}">Publier</a>
                                 <a type="button" class="btn btn-danger" href="{{path('suprEvent',{'id':evenements.id})}}">Supprimer</a>
                             </div>
                         </div> 
