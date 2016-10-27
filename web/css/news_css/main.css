@@ -265,7 +265,7 @@ and open the template in the editor.
   .thumbnail .suite > a {
     font-size: 18px;
     padding-top: 3%;
-    color: #2ed4ad;
+    color: #21A98A;
     text-decoration: none; }
 
 .couleur {
@@ -288,9 +288,42 @@ and open the template in the editor.
 .couleurEvent {
   background-color: #E5E5E5; }
 
+/**/
+.div1 {
+  float: left;
+  width: 50%;
+  padding-bottom: 35px;
+  padding-top: 35px; }
+
+.div2 {
+  float: right;
+  width: 50%;
+  padding-bottom: 35px;
+  padding-top: 35px; }
+
+.icon {
+  margin-bottom: 10px;
+  /*-----reglage position txt-------*/
+  padding-top: 8px;
+  /*-----reglage hauteur icon-------*/
+  font-size: 35px;
+  /*-----reglage size icon-------*/
+  color: #000;
+  /*-----color icon-------*/
+  width: 70px;
+  /*-----------taille background icon--------*/
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #21A98A;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
+
+/**/
 /*lien pour ajouter un evenement et photo*/
 .lienajout {
-  text-align: center; }
+  text-align: center;
+  color: black; }
 
 /*fin du lien*/
 /*bouton qui permet de publer, modifier ou suprimé*/

@@ -1,8 +1,20 @@
 {%extends ":admin:index.html.twig"%}
 
 {% block body %}
-    
-    <a class="lienajout" href="{{path("formAddEvent")}}"><h1>Ajouter un événement</h1></a>  
+    <div class="grouplienajout">
+        <div class="div1">
+            <div class="icon">
+                <i class="fa fa-calendar-o"></i>
+            </div>
+            <a class="lienajout" href="{{path("formAddEvent")}}"><h1>Ajouter un post</h1></a>
+        </div>
+            <div class="div2">
+                <div class="icon">
+                    <i class="fa fa-thumb-tack"></i>
+                </div>
+                <a class="lienajout" href="{{path('eventBrou')}}"><h1>Mes brouillons</h1></a>
+            </div>
+    </div>
     <div id="event">
         <div class="container-fluid photo_event">
             <div class="row">

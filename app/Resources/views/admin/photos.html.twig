@@ -2,8 +2,20 @@
 
  
 {% block body %}
-    
-    <a class="lienajout" href="{{path("formphotos")}}"><h1>Ajouter une photo</h1></a>  
+    <div class="grouplienajout">
+        <div class="div1">
+            <div class="icon">
+                <i class="fa fa-camera"></i>
+            </div>
+            <a class="lienajout" href="{{path("formphotos")}}"><h1>Ajouter un post</h1></a>
+        </div>
+            <div class="div2">
+                <div class="icon">
+                    <i class="fa fa-thumb-tack"></i>
+                </div>
+                <a class="lienajout" href="{{path('photoBrou')}}"><h1>Mes brouillons</h1></a>
+            </div>
+    </div>
     <div class="container-fluid photo_event">
         <div class="row">
             {% for photos in annoncePhotos %}

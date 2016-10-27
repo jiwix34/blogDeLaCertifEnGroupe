@@ -32,6 +32,11 @@ class AdminController extends Controller {
  * @Template(":admin:index.html.twig")
  */
     public function homeAdmin(){
+       $em = $this->getDoctrine();
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'),
+        //filtrage par date croissant
+        array('date'=>'DESC'), 3);
+      return array ('annoncePhotos' => $photos); 
         
     }
     
@@ -45,8 +50,9 @@ class AdminController extends Controller {
    */
     public function getPhotos(){
      $em = $this->getDoctrine();
-        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'));
-      
+        $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'),
+        //filtrage par date croissant
+        array('date'=>'DESC'));
       return array ('annoncePhotos' => $photos);
       
     }
@@ -136,7 +142,9 @@ class AdminController extends Controller {
      */
     public function photoBrou() {
         $em = $this->getDoctrine();
-        $annonce = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '0'));
+        $annonce = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '0'),
+                  //filtrage par date croissant
+        array('date'=>'DESC'));
         return array("brouillonPhoto" => $annonce);
     }
     
@@ -164,7 +172,9 @@ class AdminController extends Controller {
    */
     public function getEvent(){
       $em = $this->getDoctrine();
-        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'));
+        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'),
+                  //filtrage par date croissant
+        array('date'=>'DESC'));
         return array("annonceEvent" => $event);
             
     }
@@ -265,7 +275,9 @@ class AdminController extends Controller {
      */
     public function brouilEvent() {
         $em = $this->getDoctrine();
-        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '0'));
+        $event = $em->getRepository("AppBundle:Evenements")->findBy(array('publier' => '0'),
+                  //filtrage par date croissant
+        array('date'=>'DESC'));
         return array("brouillonEvents" => $event);
     }
     
