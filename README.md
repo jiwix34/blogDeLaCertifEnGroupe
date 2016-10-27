@@ -10,7 +10,7 @@ blogPhotoGraff
 
 **Section Événement** : dédiée à l'actualité sur la photo : Rassemblement, Conférence ...
 
-##Navigation : ''Voir pièce jointe''
+##Navigation :
 
 **Visiteur '' non connecté''**
 Il peut juste naviguer sur les deux sections 
@@ -36,6 +36,7 @@ d'un admin.
 **Security**
 L' authentification se fait grâce à un formulaire qui vient s'appuyer sur une base de données qui contient les
 informations du compte.  
+ 
 ---
 
 #Langage & Framework
@@ -59,9 +60,11 @@ informations du compte.
 
 #Installation :  
 
-  * installer les dépendances via composer : right-click project -> composer -> install (dev)
-  * création base de données via doctrine "php bin/console doctrine:schema:update --force"
-  * création du compte admin en rajoutant /add apres web/app_dev.php dans la barre dans l'url
+  * installer les dépendances via composer : right-click project -> composer -> install (dev).
+  * Mettre un nom de base de données dans app -> config -> parameters.yml -> database_name: mettez votre votre mot de passe si vous en avez mis un au préalable.
+  * Créer la base de données via ligne de commande : php bin/console doctrine:database:create.
+  * création base de données via doctrine "php bin/console doctrine:schema:update --force".
+  * création du compte admin en rajoutant /add apres web/app_dev.php dans la barre dans l'url.
 
 
 
