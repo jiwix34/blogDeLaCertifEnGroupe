@@ -15,9 +15,9 @@
                         <p>{{photos.commentaire}}</p>
                         <p class="title"> {{photos.date|date('d/m/y')}} |</p>
                         <p class="title">{{photos.auteur}}</p> 
-                        <div class="bouton">        
-                            <a type="button" class="btn btn-success" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
-                            <a type="button" class="btn btn-info" href="{{path('photoBrouEdit',{'id':photos.id})}}">Mettre en Editer</a>
+                        <div class="bouton"> 
+                            <a type="button" class="btn btn-info" href="{{path('modifphotos',{'id':photos.id})}}">Modifier</a>
+                            <a type="button" class="btn btn-success" href="{{path('photoBrouEdit',{'id':photos.id})}}">Publier</a>
                             <a type="button" class="btn btn-danger" href="{{path('delatephotos',{'id':photos.id})}}">Supprimer</a>
                         </div>
                     </div>  

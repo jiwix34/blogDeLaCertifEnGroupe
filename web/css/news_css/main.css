@@ -266,6 +266,10 @@ and open the template in the editor.
     padding-top: 3%;
     color: #21A98A; }
 
+.couleur {
+  background-color: transparent;
+  border: none; }
+
 /*lien pour ajouter un evenement et photo*/
 .lienajout {
   text-align: center; }
