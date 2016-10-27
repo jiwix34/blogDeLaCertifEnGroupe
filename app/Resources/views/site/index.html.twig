@@ -46,10 +46,16 @@
                                     <li><a class="" href="{{path('home')}}">Accueil<span class="sr-only"></span></a></li>
                                     <li><a class="" href="{{path('photo')}}">Photos</a></li>
                                     <li><a class="" href="{{path('evenement')}}">Evènements</a></li>
+                                    {% if is_granted("ROLE_ADMIN") %}
+                                    <li><a class="" href="{{path('admin')}}">Mon espace personnel</a></li>
+                                    {% endif %}
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
+                                    {% if is_granted("ROLE_ADMIN") %}
+                                    <li class="connexion"><a class="" href="{{path('loginOut')}}">Déconnexion</a></li>
+                                    {% else %}
                                     <li class="connexion"><a class="" href="{{path('login')}}">Connexion</a></li>
-
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
