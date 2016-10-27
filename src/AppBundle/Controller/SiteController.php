@@ -31,7 +31,17 @@ class SiteController extends Controller {
         $photos = $em->getRepository("AppBundle:Photos")->findBy(array('publier' => '1'),
         //filtrage par date croissant
         array('date'=>'DESC'),3);
-      return array ('annoncePhotos' => $photos); 
+  
+        
+        $entitymanager = $this->getDoctrine();
+        $event = $entitymanager->getRepository("AppBundle:Evenements")->findBy(array('publier' => '1'),
+        //filtrage par date croissant
+        array('date'=>'DESC'),3);
+        
+        
+        return array ('annoncePhotos' => $photos,'annonceEvent' => $event); 
+      
+      
  }
  
  /**
