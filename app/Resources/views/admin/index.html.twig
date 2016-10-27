@@ -18,7 +18,9 @@
             <h1>Salut {{(app.user.name)}} </h1>
             <img  src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-circle" height="100" >
         </div><!---------fin-blog------------->
-        <nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
+        
+
+        <nav id="nav" class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -56,6 +58,7 @@
                     </div>
                             
                 </nav>
+
 {% block body %}
     
     {% endblock %}
