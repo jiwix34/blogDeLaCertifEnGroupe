@@ -62,11 +62,7 @@
                     </nav>
                 </div>
                 {% block section %}
-
-                {% endblock %}
-
-                
-                {% for photos in annoncePhotos %}
+                     {% for photos in annoncePhotos %}
                 <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
                     <div class="thumbnail couleur">
                         <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive"/>
@@ -79,6 +75,10 @@
                     </div>    
                 </div>
                 {% endfor %}
+                {% endblock %}
+
+                
+               
                 {#Footer avec les informations sur les dev#}
 
                 <footer class="footer">
