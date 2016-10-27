@@ -10,10 +10,10 @@
 
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
     dans la section Evènement#}
-        <div class="container-fluid photo_event">
+        <div class="container-fluid photo_event couleurEvent">
             <div class="row">
                 {% for evenements in annonceEvent %}
-                    <div class="changementCouleur col-sm-6 col-md-4 event">
+                    <div class="col-sm-6 col-md-4">
                         <div class="thumbnail thumbEvent">
                             <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
                             <h2 class="titleEvent">{{evenements.titre}} |</h2>
@@ -22,7 +22,7 @@
                             <p class="titleEvent"> {{evenements.date|date('d/m/y')}} |</p>
                             <p class="titleEvent">{{evenements.auteur}}</p>
                             <div class="comm_suite">
-                                <p class="commentaire">{{evenements.commentaire| truncate(150, true, ' ...')}}</p>
+                                <p class="commentaire">{{evenements.commentaire| truncate(100, true, ' ...')}}</p>
                                 <p class="suite"><a href="{{path('detailevenement', {'id':evenements.id})}}">Voir la suite</a></p>
                             </div>
 

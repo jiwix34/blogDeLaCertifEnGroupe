@@ -64,7 +64,8 @@ informations du compte.
   * Mettre un nom de base de données dans app -> config -> parameters.yml -> database_name: mettez votre votre mot de passe si vous en avez mis un au préalable.
   * Créer la base de données via ligne de commande : "php bin/console doctrine:database:create".
   * création base de données via doctrine "php bin/console doctrine:schema:create".
-  * création du compte admin en rajoutant /add apres web/app_dev.php dans la barre dans l'url.
+  * création du compte admin en rajoutant /add apres web/app.php dans la barre dans l'url.
+  * le compte admin par défaut est "Email: admin@admin.fr ; Mot de passe: admin"
 
 
 

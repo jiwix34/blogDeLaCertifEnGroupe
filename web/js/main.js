@@ -34,8 +34,9 @@ $(window).on('scroll', function(){
                 $('.navbar-brand').css( { paddingTop : "15px", transition :"0.4s" } );
 	}
 
-});
-
+    });
+    $('body').css('display', 'none');
+    $('body').fadeIn(1600);
 
 });
 

@@ -272,17 +272,21 @@ and open the template in the editor.
   background-color: transparent;
   border: none; }
 
-.event {
-  height: 600px; }
-
 .thumbEvent {
-  margin-top: 15%;
-  margin-bottom: 10%; }
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .titleEvent {
   display: inline-block;
   font-size: 25px;
   font-weight: bold; }
+
+.couleurEvent {
+  background-color: #E5E5E5; }
 
 /*lien pour ajouter un evenement et photo*/
 .lienajout {
