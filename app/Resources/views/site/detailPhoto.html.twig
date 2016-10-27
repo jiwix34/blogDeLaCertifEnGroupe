@@ -21,13 +21,13 @@
                         <h2 class="titledetail">{{photos.titre}}</h2>
                         <p class="appareil">{{photos.appareilPhotoUtilise}}</p>
                         <p class="commentaire">{{photos.commentaire}}</p>
+                        <p class="ville">{{photos.ville}}</p>
                         <div class="renseignement">
-                            <p class="date"> {{photos.date|date('d/m/y')}}</p>
-                            <p class="ville">{{photos.ville}}</p>
+                            <p class="date"> {{photos.date|date('d/m/y')}} |</p>
                             <p class="auteur">{{photos.auteur}}</p>
                         </div>
                     </div>
-                    <a type="button" class="btn btn-info boutonDetail" href="{{path('photo')}}">Retour</a>
+                    <a type="button" class="btn boutonDetail" href="{{path('photo')}}">Retour</a>
 
                 </div>    
 
