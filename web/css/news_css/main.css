@@ -260,11 +260,13 @@ and open the template in the editor.
   .thumbnail .comm_suite {
     margin-top: 20px; }
   .thumbnail .commentaire {
-    font-size: 18px; }
-  .thumbnail .suite {
+    font-size: 18px;
+    text-align: justify; }
+  .thumbnail .suite > a {
     font-size: 18px;
     padding-top: 3%;
-    color: #21A98A; }
+    color: #2ed4ad;
+    text-decoration: none; }
 
 .couleur {
   background-color: transparent;

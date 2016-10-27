@@ -30,12 +30,14 @@
 
         .commentaire{
             font-size: 18px;
+            text-align: justify;
         }
 
-        .suite{
+        .suite>a{
             font-size: 18px; 
             padding-top: 3%;
-            color: #21A98A;
+            color: #2ed4ad;
+            text-decoration: none;
         }
     }
 
