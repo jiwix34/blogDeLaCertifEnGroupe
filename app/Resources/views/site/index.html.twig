@@ -14,18 +14,17 @@
             <div id="container">
 
                 {% block header %}
-                    <div class="header" id="header-home">
+                    <div id="header-content">
                         <img class="header-img" src="{{asset('./images/fond-home.jpg')}}" />
                         <div class="titre">
                             <img class="img-responsive"src="{{asset('./images/visu-logo-home.png')}}" />
                         </div>
                     </div>
 
-
                 {% endblock %}
 
                 {#Barre de Nav avec Bootstrap#}
-
+               <div class="menu-nav">
                 <nav id="nav" class="navbar navbar-default" data-spy="affix" data-offset-top="100">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -55,6 +54,7 @@
                         </div>
                     </div>
                 </nav>
+                </div>
                 {% block section %}
 
                 {% endblock %}
