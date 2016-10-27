@@ -16,7 +16,6 @@
 
         <div class="messageBienvenue">
             <h1>Salut {{(app.user.name)}} </h1>
-            <img  src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-circle" height="100" >
         </div><!---------fin-blog------------->
 
 
@@ -29,10 +28,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="">
+                        <img alt="Logo" src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-circle img-compte" height="80">
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        
+
                         <li class="monBlog"><a href="{{path('home')}}">Mon blog</a></li>
                         {# Dropdown Rubrique Photos #}
                         <li class="dropdown">  

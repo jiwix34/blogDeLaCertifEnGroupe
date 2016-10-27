@@ -1,7 +1,5 @@
 /**/
 
-
-
 .div1{
     float: left;
     width: 50%;
@@ -37,7 +35,7 @@
 }
 /*fin du lien*/
 
-/*bouton qui permet de publer, modifier ou suprimé*/
+/*bouton qui permet de publer, modifier ou supprimer*/
 .bouton{
     text-align: center;
     margin-bottom: 30px;
@@ -45,66 +43,67 @@
     padding-top: 35px;
 }
 /*fin bouton*/
-
-
-
-/*entete du login retiré*/
-.headerConnexion{
-    display: none;
-}
-/*fin entete*/
-
-/*titre centré*/
-.titre-connexion{
-    text-align: center;
-}
-/*fin du titre*/
-
+    
+/*Début du skin de la page "Mon compte"*/
+    
 /*arriere plan derriere content-connexion*/
-.imagelogin{
-    background-image: url('../../images/fond-home.jpg');
-    background-size: cover;
-    width: 100%;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-right: 350px;
-    padding-left: 350px;
+
+.img-compte{
+    margin-top: -15px;
+}
+
+.img-fond{
+    background-image: url('../../images/img-fond2.jpg');
+    background-size: cover; 
+}
+.monCompte{
+   padding-left: 0;
+   padding-right: 0;
+   margin-left: 0;
+   margin-right: 0;
     /*fin arriere plan*/
 }
-    /*responsive arriere plan*/
-    @media screen and(min-width: 320px)and(max-width: 768px){
-        .imagelogin{
-            padding-right: 50px;
-            padding-left: 50px;
-        }
+  /*fin responsive bouton*/
+  
+    .thumbInfo{
+        padding-top: 40px;
+        padding-bottom: 60px;
+        margin-bottom: 100px;
+        background-color: #E5E5E5;
     }
-    /*fin responsive arriere plan*/
-
-    /*div qui englobe les champ et bouton*/
-    .content-connexion{
-        background-color: rgba(255, 255, 255, 0.7);
-        padding-top: 50px;
-        padding-bottom: 50px;
-        width: 100%;
-        height: 220px;
-        border-radius: 10px;
-        border: 3px solid #fff;
-        
-        /*bouton connexion*/
-        .boutonConnexion{
-            text-align: center;
-            margin-bottom: 30px;
-            padding-top: 15px;
-        }
-        /*fin bouton*/
-        
-        /*responsive bouton connexion*/
-        @media screen and(min-width: 768px){
-            .boutonConnexion{
-                text-align: right;
-                padding-top: 15px;
-            }
-        }
-        /*fin responsive bouton*/
+    
+    .titre-connexion{
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
-    /*fin div*/
+    
+    .infoProfil{
+     padding-left: 50px;
+     padding-right: 50px;
+     text-align: center;
+     padding-top: -20px;
+    }
+    
+    .img-info{
+        width: 20%;
+    }
+    
+    .nom{
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 45px;
+        font-size: 17px;
+    }
+    
+    .champ{
+        margin-top: 28px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .boutonCompte{
+        margin-top: 30px;
+        float: right;
+        margin-right: 10px;
+    }
+    

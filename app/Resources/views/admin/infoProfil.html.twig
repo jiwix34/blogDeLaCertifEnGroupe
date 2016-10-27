@@ -3,39 +3,47 @@
 
 
 {% block body %}
-    <body>
-
-        <h1>Modif Info </h1>
-
-        <div class="container">
-            <div class="col-sm-6 col-md-12">
-
-
-                {{form_start(formUser,{'attr':{'action':path('modifUser',{'id':id}),'enctype':'multipart/form-data'}})}}
-                <div class="input-group">
-                    <span class="input-group-addon" >Nom</span>
-                    {{ form_widget(formUser.name, { 'attr': {'class': 'form-control'} })}}
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon" >Email</span>
-                    {{ form_widget(formUser.email, { 'attr': {'class': 'form-control'} })}}
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon" >Mot de passe</span>
-                    {{ form_widget(formUser.pass, { 'attr': {'class': 'form-control'} })}}
-                </div>
-                <div class="input-group">
-                    <span class=" input-group-addon" >Image</span>
-                    {{ form_widget(formUser.image, { 'attr': {'class': 'form-control filestyle'} })}}
-                </div>
-{# <img class="col-lg-2" src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-rounded" >#}
-                {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-default'} })}}
-
-
-
-            </div>
-     
+        <div class="titre-connexion">
+            <h1>Mon compte </h1>
         </div>
-    </body>
+        <div class="img-fond">
+        <div class="container monCompte">
+            <div class="row">
 
+                <div class="col-sm-8 col-md-8 col-md-offset-1 thumbnail thumbInfo">
+
+                    <h2 class="infoProfil">Les informations sur mon compte</h2>
+                    <img alt="Logo" src="{{asset('uploads/images/')~(app.user.image)}}" class=" img-circle img-info" height="20">
+                    <p class="nom">Mon nom :</p>
+                    <p class="nom">Mon email :</p>
+                    <p class="nom">Mon mot de passe :</p>
+                </div>  
+
+                <div class="col-sm-8 col-md-8 col-md-offset-1 thumbnail thumbInfo">
+                    <h2 class="infoProfil">Modifier mes informations</h2>
+
+                    {{form_start(formUser,{'attr':{'action':path('modifUser',{'id':id}),'enctype':'multipart/form-data'}})}}
+                    <div class="input-group champ">
+                        <span class="input-group-addon" >Nom</span>
+                        {{ form_widget(formUser.name, { 'attr': {'class': 'form-control'} })}}
+                    </div>
+                    <div class="input-group champ">
+                        <span class="input-group-addon" >Email</span>
+                        {{ form_widget(formUser.email, { 'attr': {'class': 'form-control'} })}}
+                    </div>
+                    <div class="input-group champ">
+                        <span class="input-group-addon" >Mot de passe</span>
+                        {{ form_widget(formUser.pass, { 'attr': {'class': 'form-control'} })}}
+                    </div>
+                    <div class="input-group champ">
+                        <span class=" input-group-addon" >Avatar</span>
+                        {{ form_widget(formUser.image, { 'attr': {'class': 'form-control filestyle'} })}}
+                    </div>
+                    <div class="boutonCompte">
+                    {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-default'} })}}
+                    </div>
+                </div> 
+            </div>
+        </div>
+        </div>
 {% endblock %}
