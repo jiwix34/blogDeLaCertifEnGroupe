@@ -18,7 +18,6 @@
                             <p class="title"> {{evenements.date|date('d/m/y')}} |</p>
                             <p class="title">{{evenements.auteur}}</p>
                             <div class="bouton">                                                   
-                                <a type="button" class="btn btn-success">Publier</a>
                                 <a type="button" class="btn btn-info" href="{{path('editEvent',{'id':evenements.id})}}">Modifier</a>
                                 <a type="button" class="btn btn-danger" href="{{path('suprEvent',{'id':evenements.id})}}">Suppr</a>
                             </div> 
