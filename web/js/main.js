@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     $('.titre').css({
-        right: ($('#header-home').width() - $('.titre').outerWidth()) / 2,
-        top: ($('#header-home').height() - $('.titre').outerHeight()) / 2
+        right: ($('#header-content').width() - $('.titre').outerWidth()) / 2,
+        top: ($('#header-content').height() - $('.titre').outerHeight()) / 2
     });
 
     $(window).resize(function () {
@@ -13,36 +13,25 @@ $(document).ready(function () {
     });
 
 
-    //-----------nav-min-----------------//
-//    $(window).on('scroll', function () {
-//        if ($(window).scrollTop() > 200) {
-//            $('.navbar-brand').css('display', 'none');
-//            $('.navbar-default').addClass('navbar-min');
-//            $('.navbar-default').addClass('navbar-nav-min');
-//            $('.navbar-default').addClass('navbar-brand-min');
-//            $('.navbar-default').removeClass('navbar-nav');
-//
-//
-//        } else {
-//            $('.navbar-brand').css('display', '');
-//            $('.navbar-default').removeClass('navbar-min');
-//            $('.navbar-default').removeClass('navbar-nav-min');
-//            $('.navbar-default').removeClass('navbar-brand-min');
-//
-//        }
-//    });
+
 
         
-        var homeHeight = $(window).height();
-	$('#header-home').css('height',homeHeight);
+        var homeHeight = $('#header-content').height();
+	$('#header-content').css('height',homeHeight);
 	
 
         //Scroll Menu
 $(window).on('scroll', function(){
 	if( $(window).scrollTop()>homeHeight){
 		$('.menu-nav').addClass('navbar-fixed-top');
+                $('.menu-nav').addClass('navbar-nav-min');
+                $('.connexion').css( { paddingTop : "30px",paddingBottom : "10px", transition :"0.4s" } );
+                $('.navbar-brand').css( { paddingTop : "5px", transition :"0.4s" } );
+               
 	} else {
 		$('.menu-nav').removeClass('navbar-fixed-top');
+                $('.connexion').css( { paddingTop : "0",paddingBottom : "0px", transition :"0.4s" } );
+                $('.navbar-brand').css( { paddingTop : "15px", transition :"0.4s" } );
 	}
 
 });

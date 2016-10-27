@@ -1,19 +1,18 @@
 .navbar {
-    position: relative;
     min-height: 50px;
     margin-bottom: 0px;
     border: 0px solid transparent;
 }
 //------------min--------------//
-.navbar-min {
-/*    position: relative;*/
+/*.navbar-min {
     min-height: 25px;
     transition: 0.4s;
-}
+}*/
 //------------min--------------//
 .navbar-default {
     background-color: white;
     border-color: white;
+    border-radius: 0;
 }
 .navbar-default .navbar-brand {
     color: #777;
@@ -37,18 +36,20 @@
 }
 .connexion {
     background-color: #2ED4AD;
-    margin-top: -80px;
+    margin-top: -65%;
     margin-bottom: 30px;
-
-    
 }
+//----------min--------------//
+
+//----------min--------------//
 
 .navbar-default .navbar-nav > li > a {
     color: black;
     font-size: 20px;
 }
 //----------min--------------//
-.navbar-default.navbar-nav-min li a {
+
+.navbar-fixed-top.navbar-nav-min li a {
  font-size: 18px;
  padding-top: 0px;
  line-height: 0px;
@@ -138,23 +139,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-brand {
     float: left;
     padding: 15px 15px;
-    font-size: 18px;
     line-height: 20px;
     height: 50px;
     transition: 0.3s;
 }
-//------min-------------//
-.navbar-brand-min {
-    background-image: url('../../images/logo-min.png');
-    background-repeat: no-repeat;
-    width: 100%;
-    line-height: 10px;
-    height: 55px;
-    transition: 0.3s;
-    margin-bottom: 5px;
-}
 
-//------min-------------//
+
 .navbar-brand:hover,
 .navbar-brand:focus {
     text-decoration: none;
@@ -172,7 +162,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
 
 .navbar-fixed-top {
-    top: 0;
-    border-width: 0 0 1px;
-    background: rgba(255,255,255,0.9);
+    top: 0px;
+    border-width: 0 0 0px;
 }

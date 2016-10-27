@@ -1,7 +1,7 @@
 {% extends ':site:index.html.twig' %}
 
 {% block header %}
-    <div class="header">
+    <div id="header-content">
         <img class="header-img" src="{{asset('./images/fond-page-photos.jpg')}}" />
     </div>
 {% endblock %}
@@ -10,25 +10,29 @@
 
     {#Boucle qui va rappeler les différents articles autant de fois qu'ils sont demandés
     dans la section Photo#}
-    
-        <div class="container-fluid detail">
-            <div class="row">
-                {% for evenements in annonceEvent %}
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="thumbnail">
-                            <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
-                            <h2 class="title">{{evenements.titre}} |</h2>
-                            <p class="lieu">{{evenements.lieuxExposition}}</p>
-                            <p class="commentaire">{{evenements.commentaire}}</p>
-                            <p class="date"> {{evenements.date|date('d/m/y')}} |</p>
+
+    <div class="container-fluid detail">
+        <div class="row">
+            {% for evenements in annonceEvent %}
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="thumbnail detailPage">
+                        <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
+                        <h2 class="titledetail">{{evenements.titre}}</h2>
+                        <p class="lieu">{{evenements.lieuxExposition}}</p>
+                        <p class="commentaire">{{evenements.commentaire}}</p>
+                        <div class="renseignement">
+                            <p class="date"> {{evenements.date|date('d/m/y')}}</p>
                             <p class="ville">{{evenements.ville}}</p>
                             <p class="auteur">{{evenements.auteur}}</p>
                         </div>
-                    </div>    
+                    </div>
+                    <a type="button" class="btn btn-info boutonDetail" href="{{path('evenement')}}">Retour</a>
 
-                {% endfor %}
+                </div>    
 
-            </div>
+            {% endfor %}
+
         </div>
+    </div>
 
 {% endblock %}
