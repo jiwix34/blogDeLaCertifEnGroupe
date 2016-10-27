@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-  <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-     <title>Welcome!</title>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Welcome!</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" type="text/css" href="{{asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/news_css/main.css')}}"/>
-        <link rel="stylesheet" type="text/css" href="{{asset('./css/font-awesome.min.css')}}"/>
-  </head>
+        <link rel="stylesheet" href="{{asset('./css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('./css/news_css/main.css')}}">
+        <link rel="stylesheet" href="{{asset('./css/font-awesome.min.css')}}">
+    </head>
 
     <body>
-        
+
         <div class="messageBienvenue">
             <h1>Salut {{(app.user.name)}} </h1>
             <img  src="{{asset('uploads/images/')~(app.user.image)}}"  class=" img-circle" height="100" >
         </div><!---------fin-blog------------->
-        
+
 
         <nav id="nav" class="navbar navbar-default">
             <div class="container-fluid">
@@ -30,42 +30,43 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
-                            {#Utile ??????? <li><a href="{{path('admin')}}">Accueil</a></li>#}
-                            {# Dropdown Rubrique Photos #}
-                                <li class="dropdown">  
-                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button">Rubrique Photos <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{path('annoncePhotos')}}">Mes Publications</a></li>
-                                        <li  class="divider"></li>
-                                        <li><a href="{{path('photoBrou')}}">Mes brouillons</a></li>
-                                    </ul>
-                                </li>
-                            {# Dropdown Rubrique Evènements #}
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rubrique Evènements <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="js-scrollTo" href="{{path('annonceEvent')}}">Mes Publications </a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="{{path('eventBrou')}}">Mes brouillons</a></li>
-                                    </ul>
-                                </li>
-                                <li><a class="js-scrollTo" href="{{path('editUser',{'id':(app.user.id)})}}">Mon compte</a></li>
-                                <li><a class="js-scrollTo" href="{{path('loginOut')}}">Se Déconnecter</a></li>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        {#Utile ??????? <li><a href="{{path('admin')}}">Accueil</a></li>#}
+                        {# Dropdown Rubrique Photos #}
+                        <li class="dropdown">  
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Rubrique Photos <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{path('annoncePhotos')}}">Mes Publications</a></li>
+                                <li  class="divider"></li>
+                                <li><a href="{{path('photoBrou')}}">Mes brouillons</a></li>
                             </ul>
-                        </div>
-                    </div>
-                            
-                </nav>
+                        </li>
+                        {# Dropdown Rubrique Evènements #}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rubrique Evènements <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="js-scrollTo" href="{{path('annonceEvent')}}">Mes Publications </a></li>
+                                <li class="divider"></li>
+                                <li><a href="{{path('eventBrou')}}">Mes brouillons</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="js-scrollTo" href="{{path('editUser',{'id':(app.user.id)})}}">Mon compte</a></li>
+                        <li><a class="js-scrollTo" href="{{path('loginOut')}}">Se Déconnecter</a></li>
+                    </ul>
+                </div>
+            </div>
 
-{% block body %}
-    
-    {% endblock %}
-    
-      <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js')}}"></script>
-      <script type="text/javascript" src="{{asset('../vendor/twbs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-     
-</body>
+        </nav>
+
+        {% block body %}
+
+        {% endblock %}
+
+        <script type="text/javascript" src="{{asset('./js/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('./js/bootstrap.min.js')}}"></script>
+
+
+    </body>
 
 </html>
