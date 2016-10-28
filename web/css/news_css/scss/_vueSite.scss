@@ -1,40 +1,46 @@
 @import "_variable.scss";
 
+/*div qui englobe les articles*/
 .photo_event{
     text-align: left;
     margin-left: 5%;
     margin: 0;
 }
 
+/*changement background un sur deux dans photo*/
 .changementCouleur:nth-child(2n+1){
     background-color: #E5E5E5;
-}    
+}  
+
+/**/
 .thumbnail{
     margin-top: 3%;
     margin-bottom: 5%;
     margin-left: 20%;
     margin-right: 20%;
     padding-bottom: 3%;
-
+    /*info se trouvant dans thumbnail*/
     .title{
         display: inline-block; 
         font-size: 30px;
         font-weight: bold;
     }
+    /*info se trouvant dans thumbnail*/
 
     .info{
         display: none;
     }
-
+    
+    /*emplacement du lien voir la suite du commentaire*/
     .comm_suite{
         margin-top: 20px;  
     }
-
+    /*info se trouvant dans thumbnail*/
     .commentaire{
         font-size: 18px;
         text-align: justify;
     }
-
+    /*acceder a l'arcticle complet*/
     .suite>a{
         font-size: 18px; 
         padding-top: 3%;
@@ -43,11 +49,12 @@
     }
 }
 
+/*opacité sur le thumbnail*/
 .couleur{
     background-color: rgba(0, 0, 0, 0);
     border:none;
 }
-
+/*proprieté du thumbnail event*/
 .thumbEvent{
     margin-top: 100px;
     margin-bottom: 100px;
@@ -56,13 +63,13 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-
+/*info thumbnail évènement*/
 .titleEvent{
     display: inline-block; 
     font-size: 25px;
     font-weight: bold;
 }
-
+/*couleur thumbnail évènement*/
 .couleurEvent{
     background-color: #E5E5E5; 
 }

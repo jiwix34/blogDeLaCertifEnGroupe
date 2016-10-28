@@ -1,31 +1,26 @@
 @import "_variable.scss";
 
-/*.header{
-    position: relative;
-}*/
-
-
-
+/*image entête de site*/
 .header-img{
     background-size: cover;
     width: 100%;
 }
-
+/*titre dans l'image de l'entête*/
 .titre{
     position: absolute;
     top: 0;
     width: 60%;
 }
-
+/*couleur background de la recupération des article dans la rubrique photo*/
 .test1{
     background-color: #E5E5E5;
 }
-
+/*marge dans les div*/
 .thumbHome{
     margin-top: 60px;
     margin-bottom: 100px;
 }
-
+/*bouton qui permet d'accéder aux rubriques adéquates'*/
 .boutonHome{
         width: 120px;
         font-size: 16px;
@@ -35,7 +30,7 @@
         background-color: $couleurPrincipal;
         color: black;
     }
-
+/*Bas de la page*/
 .footer{
     background-color: #E5E5E5;
     text-align: center;
@@ -58,12 +53,12 @@
                 color:black;
             }
         }
-
+/*Informations sur les devs*/
         .dev{
             color: $couleurPrincipal;
             font-size: 16px;
         }
-
+/*Copyright du site*/
         .copy{
             font-size: 20px;
         }

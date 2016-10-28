@@ -1,11 +1,14 @@
 @import "_variable.scss";
 
+/*block ajouter un post*/
 .div1{
     float: left;
     width: 50%;
     padding-bottom: 35px;
     padding-top: 35px;
 }
+
+/*block brouillon*/
 .div2{
     float: right;
     width: 50%;
@@ -13,6 +16,7 @@
     padding-top: 35px;
 }
 
+/*icone au dessus des block*/
 .icon {
     margin-bottom:10px; /*-----reglage position txt-------*/
     padding-top: 8px; /*-----reglage hauteur icon-------*/
@@ -27,7 +31,6 @@
     margin-right: auto;
 
 }
-/**/
 /*lien pour ajouter un evenement et photo*/
 .lienajout{
     text-align: center;
@@ -46,22 +49,24 @@
 
 /*Début du skin de la page "Mon compte"*/
 
-/*arriere plan derriere content-connexion*/
-
+/*image se trouvant a gauche sur la barre de nav*/
 .img-compte{
     margin-top: -15px;
 }
 
+/*image se trouvant derrière les information*/
 .img-fond{
     background-image: url('../../images/img-fond2.jpg');
     background-size: cover; 
 }
+
+/*information du compte*/
 .monCompte{
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
     margin-right: 0;
-    /*fin arriere plan*/
+    /*responsive du titre des infos*/
     @media screen and (max-width: 768px){
         h2{
             margin-left: -35px;
@@ -69,8 +74,8 @@
         }
     }
 }
-/*fin responsive*/
 
+/*information du compte*/
 .thumbInfo{
     padding-top: 40px;
     padding-bottom: 60px;
@@ -78,11 +83,13 @@
     background-color: #E5E5E5;
 }
 
+/*titre "mon compte"*/
 .titre-connexion{
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+/*titre des deux thumbnail*/
 .infoProfil{
     padding-left: 50px;
     padding-right: 50px;
@@ -90,16 +97,19 @@
     padding-top: -20px;
 }
 
+/*image se trouvant dans information du compte*/
 .img-info{
     width: 20%;
     margin-top: 30px;
 }
+/*responsive de l'image*/
 @media screen and (max-width: 768px){
     .img-info{
         width: 30%;
     }
 }
 
+/*les informations se trouvant dans le thumbnail info*/
 .nom{
     padding-left: 50px;
     padding-right: 50px;
@@ -107,17 +117,22 @@
     font-size: 17px;
 }
 
+/*les informations se trouvant dans le thumbnail pour modifier*/
+
 .champ{
     margin-top: 28px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
+/*bouton pour confirmer*/
 .boutonCompte{
     margin-top: 30px;
     text-align: center;
     margin-right: 10px;
 }
+
+/*responsive du bouton*/
 @media screen and (min-width: 768px){
     .boutonCompte{
         margin-top: 20px;

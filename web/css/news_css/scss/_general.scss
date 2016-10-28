@@ -1,21 +1,25 @@
 
 @import "_variable.scss";
-
+/*police du site*/
 body{
     font-family: 'Open Sans', sans-serif;
 }
 
+/*div qui englobe tout sur index*/
 #container{
     width: 100%;
     margin: 0;
     padding: 0;
 }
+
+/*reseau sociaux*/
 .footer{
+    /*div qui englobe les lien*/
     .groupsocial{
         display: flex;
         justify-content: center;
         margin-top: 30px;
-
+        /*lien de reseaux*/
         .social{
             width: 65px;
             height: 65px;
@@ -30,6 +34,7 @@ body{
             margin-right: 20px;
             margin-left: 20px;
         }
+        /*responsive lien de reseaux*/
         @media screen and(max-width:768px){
             .social{
                 width: 50px;
@@ -38,6 +43,7 @@ body{
                 padding: 6px;
             }
         }
+        /*couleur au passage de la souris*/
         .socialface:hover{
             color: #3b5998;
         }
@@ -57,4 +63,3 @@ body{
     padding-top: 10px;
     padding-bottom: 10px;
 }
-/*fin titre admin*/

@@ -1,41 +1,50 @@
 @charset "UTF-8";
+/*changer theme du site*/
+/*police du site*/
 body {
   font-family: 'Open Sans', sans-serif; }
 
+/*div qui englobe tout sur index*/
 #container {
   width: 100%;
   margin: 0;
   padding: 0; }
 
-.footer .groupsocial {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px; }
-  .footer .groupsocial .social {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background-color: black;
-    font-size: 40px;
-    text-align: center;
-    display: block;
-    color: white;
-    padding-top: 6px;
-    transition: 0.5s;
-    margin-right: 20px;
-    margin-left: 20px; }
-  @media screen and (max-width: 768px) {
+/*reseau sociaux*/
+.footer {
+  /*div qui englobe les lien*/ }
+  .footer .groupsocial {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    /*lien de reseaux*/
+    /*responsive lien de reseaux*/
+    /*couleur au passage de la souris*/ }
     .footer .groupsocial .social {
-      width: 50px;
-      height: 50px;
-      font-size: 30px;
-      padding: 6px; } }
-  .footer .groupsocial .socialface:hover {
-    color: #3b5998; }
-  .footer .groupsocial .socialtwit:hover {
-    color: #1c9ceb; }
-  .footer .groupsocial .socialinsta:hover {
-    color: #a07c62; }
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background-color: black;
+      font-size: 40px;
+      text-align: center;
+      display: block;
+      color: white;
+      padding-top: 6px;
+      transition: 0.5s;
+      margin-right: 20px;
+      margin-left: 20px; }
+    @media screen and (max-width: 768px) {
+      .footer .groupsocial .social {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        padding: 6px; } }
+    .footer .groupsocial .socialface:hover {
+      color: #3b5998; }
+    .footer .groupsocial .socialtwit:hover {
+      color: #1c9ceb; }
+    .footer .groupsocial .socialinsta:hover {
+      color: #a07c62; }
 
 /*titre admin*/
 .messageBienvenue {
@@ -45,7 +54,8 @@ body {
   padding-top: 10px;
   padding-bottom: 10px; }
 
-/*fin titre admin*/
+/*changer theme du site*/
+/*changer theme du site*/
 @media (max-width: 767px) {
   .navLogo {
     display: none; } }
@@ -195,25 +205,28 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .navbar-default .navbar-nav > li > a {
     color: black;
     font-size: 16px; } }
-/*.header{
-    position: relative;
-}*/
+/*changer theme du site*/
+/*image entête de site*/
 .header-img {
   background-size: cover;
   width: 100%; }
 
+/*titre dans l'image de l'entête*/
 .titre {
   position: absolute;
   top: 0;
   width: 60%; }
 
+/*couleur background de la recupération des article dans la rubrique photo*/
 .test1 {
   background-color: #E5E5E5; }
 
+/*marge dans les div*/
 .thumbHome {
   margin-top: 60px;
   margin-bottom: 100px; }
 
+/*bouton qui permet d'accéder aux rubriques adéquates'*/
 .boutonHome {
   width: 120px;
   font-size: 16px;
@@ -223,6 +236,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: #87D37C;
   color: black; }
 
+/*Bas de la page*/
 .footer {
   background-color: #E5E5E5;
   text-align: center;
@@ -232,7 +246,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .footer .credit {
     border-bottom: 2px solid black;
     margin-left: 25%;
-    margin-right: 25%; }
+    margin-right: 25%;
+    /*Informations sur les devs*/
+    /*Copyright du site*/ }
     .footer .credit a {
       color: black;
       text-decoration: none; }
@@ -250,12 +266,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .headerConnexion {
   display: none; }
 
-/*fin entete*/
 /*titre centré*/
 .titre-connexion {
   text-align: center; }
 
-/*fin du titre*/
 /*arriere plan derriere content-connexion*/
 .imagelogin {
   background-image: url("../../images/fond-home.jpg");
@@ -266,13 +280,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding-right: 350px;
   padding-left: 350px; }
 
-/*fin arriere plan*/
 /*responsive arriere plan*/
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .imagelogin {
     padding-right: 50px;
     padding-left: 50px; } }
-/*fin responsive arriere plan*/
 /*div qui englobe les champ et bouton*/
 .content-connexion {
   background-color: rgba(255, 255, 255, 0.7);
@@ -283,9 +295,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-radius: 10px;
   border: 3px solid #fff;
   /*bouton connexion*/
-  /*fin bouton*/
-  /*responsive bouton connexion*/
-  /*fin responsive bouton*/ }
+  /*responsive bouton connexion*/ }
   .content-connexion .boutonConnexion {
     text-align: center;
     margin-bottom: 30px;
@@ -295,21 +305,29 @@ fieldset[disabled] .navbar-default .btn-link:focus {
       text-align: right;
       padding-top: 15px; } }
 
-/*fin div*/
+/*changer theme du site*/
+/*div qui englobe les articles*/
 .photo_event {
   text-align: left;
   margin-left: 5%;
   margin: 0; }
 
+/*changement background un sur deux dans photo*/
 .changementCouleur:nth-child(2n+1) {
   background-color: #E5E5E5; }
 
+/**/
 .thumbnail {
   margin-top: 3%;
   margin-bottom: 5%;
   margin-left: 20%;
   margin-right: 20%;
-  padding-bottom: 3%; }
+  padding-bottom: 3%;
+  /*info se trouvant dans thumbnail*/
+  /*info se trouvant dans thumbnail*/
+  /*emplacement du lien voir la suite du commentaire*/
+  /*info se trouvant dans thumbnail*/
+  /*acceder a l'arcticle complet*/ }
   .thumbnail .title {
     display: inline-block;
     font-size: 30px;
@@ -327,10 +345,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     color: #87D37C;
     text-decoration: none; }
 
+/*opacité sur le thumbnail*/
 .couleur {
   background-color: transparent;
   border: none; }
 
+/*proprieté du thumbnail event*/
 .thumbEvent {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -339,26 +359,32 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding-left: 10px;
   padding-right: 10px; }
 
+/*info thumbnail évènement*/
 .titleEvent {
   display: inline-block;
   font-size: 25px;
   font-weight: bold; }
 
+/*couleur thumbnail évènement*/
 .couleurEvent {
   background-color: #E5E5E5; }
 
+/*changer theme du site*/
+/*block ajouter un post*/
 .div1 {
   float: left;
   width: 50%;
   padding-bottom: 35px;
   padding-top: 35px; }
 
+/*block brouillon*/
 .div2 {
   float: right;
   width: 50%;
   padding-bottom: 35px;
   padding-top: 35px; }
 
+/*icone au dessus des block*/
 .icon {
   margin-bottom: 10px;
   /*-----reglage position txt-------*/
@@ -377,7 +403,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   margin-left: auto;
   margin-right: auto; }
 
-/**/
 /*lien pour ajouter un evenement et photo*/
 .lienajout {
   text-align: center;
@@ -393,81 +418,100 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
 /*fin bouton*/
 /*Début du skin de la page "Mon compte"*/
-/*arriere plan derriere content-connexion*/
+/*image se trouvant a gauche sur la barre de nav*/
 .img-compte {
   margin-top: -15px; }
 
+/*image se trouvant derrière les information*/
 .img-fond {
   background-image: url("../../images/img-fond2.jpg");
   background-size: cover; }
 
+/*information du compte*/
 .monCompte {
   padding-left: 0;
   padding-right: 0;
   margin-left: 0;
   margin-right: 0;
-  /*fin arriere plan*/ }
+  /*responsive du titre des infos*/ }
   @media screen and (max-width: 768px) {
     .monCompte h2 {
       margin-left: -35px;
       text-align: justify; } }
 
-/*fin responsive*/
+/*information du compte*/
 .thumbInfo {
   padding-top: 40px;
   padding-bottom: 60px;
   margin-bottom: 100px;
   background-color: #E5E5E5; }
 
+/*titre "mon compte"*/
 .titre-connexion {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+/*titre des deux thumbnail*/
 .infoProfil {
   padding-left: 50px;
   padding-right: 50px;
   text-align: center;
   padding-top: -20px; }
 
+/*image se trouvant dans information du compte*/
 .img-info {
   width: 20%;
   margin-top: 30px; }
 
+/*responsive de l'image*/
 @media screen and (max-width: 768px) {
   .img-info {
     width: 30%; } }
+/*les informations se trouvant dans le thumbnail info*/
 .nom {
   padding-left: 50px;
   padding-right: 50px;
   margin-top: 45px;
   font-size: 17px; }
 
+/*les informations se trouvant dans le thumbnail pour modifier*/
 .champ {
   margin-top: 28px;
   padding-left: 10px;
   padding-right: 10px; }
 
+/*bouton pour confirmer*/
 .boutonCompte {
   margin-top: 30px;
   text-align: center;
   margin-right: 10px; }
 
+/*responsive du bouton*/
 @media screen and (min-width: 768px) {
   .boutonCompte {
     margin-top: 20px;
     float: right;
     margin-right: 10px; } }
+/*changer theme du site*/
+/*div qui englobe les details de l'article*/
 .detail {
   text-align: left;
   margin-left: 5%;
   margin: 0; }
 
+/*thumbnail*/
 .detailPage {
   margin-top: 3%;
   margin-bottom: 5%;
   margin-left: 20%;
   margin-right: 20%;
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  /*info dans thumbnail*/
+  /*info dans thumbnail*/
+  /*info dans thumbnail*/
+  /*info dans thumbnail*/
+  /*info dans thumbnail*/
+  /*info dans thumbnail*/ }
   .detailPage .titledetail {
     display: inline-block;
     font-size: 35px;
@@ -491,6 +535,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     .detailPage .renseignement .auteur {
       color: #87D37C; }
 
+/*bouton pour revenir dans la rubrique adéquate*/
 .boutonDetail {
   width: 100px;
   font-size: 18px;

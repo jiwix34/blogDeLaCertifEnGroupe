@@ -2,13 +2,11 @@
 .headerConnexion{
     display: none;
 }
-/*fin entete*/
 
 /*titre centré*/
 .titre-connexion{
     text-align: center;
 }
-/*fin du titre*/
 
 /*arriere plan derriere content-connexion*/
 .imagelogin{
@@ -20,7 +18,6 @@
     padding-right: 350px;
     padding-left: 350px;
 }
-/*fin arriere plan*/
 
 /*responsive arriere plan*/
 @media screen and(min-width: 320px)and(max-width: 768px){
@@ -29,7 +26,6 @@
         padding-left: 50px;
     }
 }
-/*fin responsive arriere plan*/
 
 /*div qui englobe les champ et bouton*/
 .content-connexion{
@@ -47,7 +43,6 @@
         margin-bottom: 30px;
         padding-top: 15px;
     }
-    /*fin bouton*/
 
     /*responsive bouton connexion*/
     @media screen and(min-width: 768px){
@@ -56,6 +51,4 @@
             padding-top: 15px;
         }
     }
-    /*fin responsive bouton*/
 }
-/*fin div*/
