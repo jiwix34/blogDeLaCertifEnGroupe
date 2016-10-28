@@ -38,6 +38,8 @@ $(window).on('scroll', function(){
     $('body').css('display', 'none');
     $('body').fadeIn(1600);
 
+
+    
 });
 
 

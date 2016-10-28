@@ -1,3 +1,5 @@
+@import "_variable.scss";
+
 /*.header{
     position: relative;
 }*/
@@ -31,7 +33,7 @@
             color: black;
             text-decoration: none;
             &:hover{
-                color: #21A98A;
+                color: $couleurPrincipal;
             }
             span{
                 color:black;
@@ -39,7 +41,7 @@
         }
         
         .dev{
-            color: #21A98A;
+            color: $couleurPrincipal;
             font-size: 16px;
         }
 

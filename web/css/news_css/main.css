@@ -79,8 +79,8 @@ body {
   padding-top: 30px; }
 
 .connexion {
-  background-color: #2ED4AD;
-  margin-top: -80px;
+  background-color: #21A98A;
+  margin-top: -65%;
   margin-bottom: 30px; }
 
 @media (min-width: 768px) {
@@ -344,7 +344,6 @@ and open the template in the editor.
 .couleurEvent {
   background-color: #E5E5E5; }
 
-/**/
 .div1 {
   float: left;
   width: 50%;
@@ -495,7 +494,7 @@ and open the template in the editor.
   float: right;
   margin-right: 50px;
   margin-bottom: 50px;
-  background-color: #2ED4AD;
+  background-color: #21A98A;
   color: black; }
 
 /*# sourceMappingURL=main.css.map */

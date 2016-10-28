@@ -1,3 +1,5 @@
+@import "_variable.scss";
+
 .photo_event{
     text-align: left;
     margin-left: 5%;
@@ -36,7 +38,7 @@
         .suite>a{
             font-size: 18px; 
             padding-top: 3%;
-            color: #21A98A;
+            color: $couleurPrincipal;
             text-decoration: none;
         }
     }

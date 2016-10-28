@@ -1,4 +1,4 @@
-/**/
+@import "_variable.scss";
 
 .div1{
     float: left;
@@ -21,7 +21,7 @@
   width: 70px; /*-----------taille background icon--------*/
   height:70px;
   border-radius: 50%;
-  border: 1px solid #21A98A;
+  border: 1px solid $couleurPrincipal;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
