@@ -14,9 +14,9 @@
 
                     <h2 class="infoProfil">Les informations sur mon compte</h2>
                     <img alt="Logo" src="{{asset('uploads/images/')~(app.user.image)}}" class=" img-circle img-info" height="20">
-                    <p class="nom">Mon nom :</p>
-                    <p class="nom">Mon email :</p>
-                    <p class="nom">Mon mot de passe :</p>
+                    <p class="nom">Mon nom d'utilisateur : {{(app.user.name)}}</p>
+                    <p class="nom">Mon email : {{(app.user.email)}}</p>
+                    <p class="nom">Mon mot de passe : {{(app.user.pass)}}</p>
                 </div>  
 
                 <div class="col-sm-8 col-md-8 col-md-offset-1 thumbnail thumbInfo">
