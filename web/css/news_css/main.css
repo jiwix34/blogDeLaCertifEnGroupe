@@ -41,7 +41,7 @@ body {
 .messageBienvenue {
   text-align: center;
   background-color: #E5E5E5;
-  color: #21A98A;
+  color: #87D37C;
   padding-top: 10px;
   padding-bottom: 10px; }
 
@@ -80,7 +80,7 @@ body {
   padding-top: 30px; }
 
 .navbar-nav .connexion {
-  background-color: #21A98A;
+  background-color: #87D37C;
   padding-top: 0; }
 
 .navbar-default .navbar-nav > li > a {
@@ -220,7 +220,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   float: right;
   margin-right: 50px;
   margin-bottom: 50px;
-  background-color: #21A98A;
+  background-color: #87D37C;
   color: black; }
 
 .footer {
@@ -237,11 +237,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
       color: black;
       text-decoration: none; }
       .footer .credit a:hover {
-        color: #21A98A; }
+        color: #87D37C; }
       .footer .credit a span {
         color: black; }
     .footer .credit .dev {
-      color: #21A98A;
+      color: #87D37C;
       font-size: 16px; }
     .footer .credit .copy {
       font-size: 20px; }
@@ -264,9 +264,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding-top: 100px;
   padding-bottom: 100px;
   padding-right: 350px;
-  padding-left: 350px;
-  /*fin arriere plan*/ }
+  padding-left: 350px; }
 
+/*fin arriere plan*/
 /*responsive arriere plan*/
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .imagelogin {
@@ -296,15 +296,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
       padding-top: 15px; } }
 
 /*fin div*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 21 oct. 2016, 11:18:30
-    Author     : jimmy
-*/
 .photo_event {
   text-align: left;
   margin-left: 5%;
@@ -333,7 +324,7 @@ and open the template in the editor.
   .thumbnail .suite > a {
     font-size: 18px;
     padding-top: 3%;
-    color: #21A98A;
+    color: #87D37C;
     text-decoration: none; }
 
 .couleur {
@@ -381,7 +372,7 @@ and open the template in the editor.
   /*-----------taille background icon--------*/
   height: 70px;
   border-radius: 50%;
-  border: 1px solid #21A98A;
+  border: 1px solid #87D37C;
   text-align: center;
   margin-left: auto;
   margin-right: auto; }
@@ -498,7 +489,7 @@ and open the template in the editor.
     .detailPage .renseignement .date {
       margin-right: 6px; }
     .detailPage .renseignement .auteur {
-      color: #21A98A; }
+      color: #87D37C; }
 
 .boutonDetail {
   width: 100px;
@@ -506,7 +497,7 @@ and open the template in the editor.
   float: right;
   margin-right: 50px;
   margin-bottom: 50px;
-  background-color: #21A98A;
+  background-color: #87D37C;
   color: black; }
 
 /*# sourceMappingURL=main.css.map */

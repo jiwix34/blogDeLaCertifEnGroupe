@@ -19,6 +19,8 @@ class PhotosType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $d = date('Y-m-d');
+        
         $builder
                 ->add('photo', FileType::class, array('data_class'=> null))
                 ->add('titre')
@@ -30,7 +32,9 @@ class PhotosType extends AbstractType
                     ),
                     ))
                 ->add('commentaire', TextareaType::class)
-                ->add('date', DateType::class)
+                ->add('date', DateType::class, array(
+                   'widget' => 'single_text',
+                   'attr' => ['max' => $d,'min' => '1981-09-01']))
                 ->add('ville')
                 ->add('auteur')
                 ->add('publier') 

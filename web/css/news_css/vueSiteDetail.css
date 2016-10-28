@@ -30,7 +30,7 @@
     .detailPage .renseignement .date {
       margin-right: 6px; }
     .detailPage .renseignement .auteur {
-      color: #21A98A; }
+      color: #87D37C; }
 
 .boutonDetail {
   width: 100px;
@@ -38,7 +38,7 @@
   float: right;
   margin-right: 50px;
   margin-bottom: 50px;
-  background-color: #21A98A;
+  background-color: #87D37C;
   color: black; }
 
 /*# sourceMappingURL=vueSiteDetail.css.map */
