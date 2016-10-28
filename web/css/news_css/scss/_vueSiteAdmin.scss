@@ -57,13 +57,19 @@
     background-size: cover; 
 }
 .monCompte{
-   padding-left: 0;
-   padding-right: 0;
-   margin-left: 0;
-   margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
     /*fin arriere plan*/
+    @media screen and (max-width: 768px){
+        h2{
+            margin-left: -35px;
+            text-align: justify;
+        }
+    }
 }
-  /*fin responsive bouton*/
+  /*fin responsive*/
   
     .thumbInfo{
         padding-top: 40px;
@@ -86,6 +92,12 @@
     
     .img-info{
         width: 20%;
+        margin-top: 30px;
+    }
+    @media screen and (max-width: 768px){
+        .img-info{
+        width: 30%;
+    }
     }
     
     .nom{
@@ -103,7 +115,13 @@
     
     .boutonCompte{
         margin-top: 30px;
-        float: right;
+        text-align: center;
         margin-right: 10px;
     }
-    
+    @media screen and (min-width: 768px){
+        .boutonCompte{
+            margin-top: 20px;
+            float: right;
+            margin-right: 10px;
+        }
+    }

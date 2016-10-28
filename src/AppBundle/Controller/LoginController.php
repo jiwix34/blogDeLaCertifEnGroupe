@@ -50,6 +50,8 @@ class LoginController extends Controller {
         $u = new User();
         $u->setEmail("admin@admin.fr");
         $u->setPass("admin");
+        $u->setImage("default-avatar.png");
+       
         $u->setRoles(array("ROLE_ADMIN"));
         
         $em = $this->getDoctrine()->getManager();
@@ -85,8 +87,8 @@ class LoginController extends Controller {
        $f= $this->createForm(UserType::class, $uzer);
        
        if ($request->getMethod() == 'POST'){
+
        $f->handleRequest($request);
-       
        $nomDuFichier = md5(uniqid()).".".$uzer->getImage()->getClientOriginalExtension();
             $uzer->getImage()->move('uploads/images', $nomDuFichier);
             $uzer->setImage($nomDuFichier);
