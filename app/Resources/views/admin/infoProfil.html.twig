@@ -3,20 +3,18 @@
 
 
 {% block body %}
-        <div class="titre-connexion">
-            <h1>Mon compte </h1>
-        </div>
-        <div class="img-fond">
+    <div class="titre-connexion">
+        <h1>Mon compte </h1>
+    </div>
+    <div class="img-fond">
         <div class="container monCompte">
             <div class="row">
-
                 <div class="col-sm-8 col-md-8 col-md-offset-1 thumbnail thumbInfo">
-
                     <h2 class="infoProfil">Les informations sur mon compte</h2>
                     <img alt="Logo" src="{{asset('uploads/images/')~(app.user.image)}}" class=" img-circle img-info" height="20">
-                    <p class="nom">Mon nom :</p>
-                    <p class="nom">Mon email :</p>
-                    <p class="nom">Mon mot de passe :</p>
+                    <p class="nom">Mon nom d'utilisateur : {{(app.user.name)}}</p>
+                    <p class="nom">Mon email : {{(app.user.email)}}</p>
+                    <p class="nom">Mon mot de passe : {{(app.user.pass)}}</p>
                 </div>  
 
                 <div class="col-sm-8 col-md-8 col-md-offset-1 thumbnail thumbInfo">
@@ -40,10 +38,10 @@
                         {{ form_widget(formUser.image, { 'attr': {'class': 'form-control filestyle'} })}}
                     </div>
                     <div class="boutonCompte">
-                    {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-default'} })}}
+                        {{ form_widget(formUser.envoyer, { 'attr': {'class': 'btn btn-default'} })}}
                     </div>
                 </div> 
             </div>
         </div>
-        </div>
+    </div>
 {% endblock %}

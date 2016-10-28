@@ -81,7 +81,7 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()).".".$annonce->getPhoto()->getClientOriginalExtension();
             $annonce->getPhoto()->move('uploads/images', $nomDuFichier);
             $annonce->setPhoto($nomDuFichier);
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($annonce);
             $em->flush();
             
@@ -97,7 +97,7 @@ class AdminController extends Controller {
    * @Template(":admin:addPhotos.html.twig")
    */
     public function modifPhotos($id){
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $annonce = $em->find('AppBundle:Photos', $id);
         $f = $this->createForm(PhotosType::class, $annonce);
         
@@ -108,7 +108,7 @@ class AdminController extends Controller {
    * @Route("/admin/photos/delate/{id}", name="delatephotos")
    */
     public function delatePhotos($id){
-         $em = $this->getDoctrine()->getEntityManager();
+         $em = $this->getDoctrine()->getManager();
          $annonce = $em->find('AppBundle:Photos', $id);
          $em->remove($annonce);
          $em->flush();
@@ -120,7 +120,7 @@ class AdminController extends Controller {
    * @Route("/admin/photos/update/{id}", name="updatephotos")
    */
     public function updatePhotos(Request $request, $id){
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $annonce = $em->find('AppBundle:Photos', $id);
         $f = $this->createForm(PhotosType::class, $annonce);
         if ($request->getMethod() == 'POST'){
@@ -152,7 +152,7 @@ class AdminController extends Controller {
      * @Route("/admin/photos/brouillon/{id}", name="photoBrouEdit")
      */
      public function brouilPhotoEdit($id){
-         $em = $this->getDoctrine()->getEntityManager();
+         $em = $this->getDoctrine()->getManager();
          $annonce = $em->find('AppBundle:Photos', $id);
          $this->createForm(PhotosType::class, $annonce);
          $annonce->setPublier(1);
@@ -204,7 +204,7 @@ class AdminController extends Controller {
             $nomDuFichier = md5(uniqid()).".".$event->getPhoto()->getClientOriginalExtension();
             $event->getPhoto()->move('uploads/images', $nomDuFichier);
             $event->setPhoto($nomDuFichier);
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($event);
             $em->flush();
             
@@ -221,7 +221,7 @@ class AdminController extends Controller {
      * @Route("/admin/event/supr/{id}", name="suprEvent")
      */
      public function suprEvent($id){
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $recupId = $em->find("AppBundle:Evenements", $id);
         $em->remove($recupId);
         $em->flush();
@@ -235,7 +235,7 @@ class AdminController extends Controller {
      * @Template(":admin:addEvenements.html.twig")
      */
     public function editEvent($id){
-          $em = $this->getDoctrine()->getEntityManager();
+          $em = $this->getDoctrine()->getManager();
           $event = $em->find('AppBundle:Evenements',$id);
           $f= $this->createForm(EvenementsType::class, $event);
         
@@ -248,7 +248,7 @@ class AdminController extends Controller {
     * 
     */
    public function  uptdateEvent(Request $request, $id){
-       $em = $this->getDoctrine()->getEntityManager(); 
+       $em = $this->getDoctrine()->getManager(); 
        $event = $em->find('AppBundle:Evenements',$id);
        $f= $this->createForm(EvenementsType::class, $event);
        
@@ -286,7 +286,7 @@ class AdminController extends Controller {
      * @Route("/admin/publication/{id}", name="eventBrouEdit")
      */
      public function brouilEventEdit($id){
-         $em = $this->getDoctrine()->getEntityManager();
+         $em = $this->getDoctrine()->getManager();
          $event = $em->find('AppBundle:Evenements', $id);
          $this->createForm(EvenementsType::class, $event);
          $event->setPublier(1);

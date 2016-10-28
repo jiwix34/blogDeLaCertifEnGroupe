@@ -7,6 +7,7 @@
             <title> Photograff du dimanche </title>
             {#Lien du css#}
             <link rel="stylesheet" href="{{asset('./css/bootstrap.min.css')}}">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
             <link rel="stylesheet" href="{{asset('./css/news_css/main.css')}}">
             <link rel="stylesheet" href="{{asset('./css/font-awesome.min.css')}}">
         </head>
@@ -34,7 +35,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="">
+                                <a class="navbar-brand" href="{{path('home')}}">
                                     <img alt="Logo" src="{{asset('./images/logo.png')}}">
                                 </a>
                             </div>
@@ -99,8 +100,8 @@
                 
                
                 {#Footer avec les informations sur les dev#}
-
-                <footer class="footer">
+                
+                <footer class="footer col-xs-12">
                     <div class="container">
                         <div class="credit">
                             <p class="copy"> Copyright Photograff 2016 - Tous droits réservés</p>
