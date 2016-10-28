@@ -77,9 +77,17 @@
 
 .connexion {
   background-color: #2ED4AD;
-  margin-top: -65%;
+  margin-top: -80px;
   margin-bottom: 30px; }
 
+@media (min-width: 768px) {
+  .connexion {
+    font-size: 15px;
+    margin-bottom: 30px;
+    margin-left: 20px; }
+
+  .navbar-nav {
+    margin-right: 50px; } }
 .navbar-default .navbar-nav > li > a {
   color: black;
   font-size: 20px; }
