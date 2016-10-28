@@ -1,3 +1,5 @@
+@import "_variable.scss";
+
 .detail{
     text-align: left;
     margin-left: 5%;
@@ -45,7 +47,7 @@
             }
             
             .auteur{
-                color: #21A98A;
+                color: $couleurPrincipal;
             }
         }
 
@@ -57,7 +59,7 @@
         float: right;
         margin-right: 50px;
         margin-bottom: 50px;
-        background-color: #2ED4AD;
+        background-color: $couleurPrincipal;
         color: black;
     }
 

@@ -1,3 +1,6 @@
+@import "_variable.scss";
+
+
 .navbar {
     min-height: 50px;
     margin-bottom: 0px;
@@ -35,7 +38,7 @@
 
 }
 .connexion {
-    background-color: #2ED4AD;
+    background-color: $couleurPrincipal;
     margin-top: -65%;
     margin-bottom: 30px;
 }

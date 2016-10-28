@@ -1,3 +1,4 @@
+@import "_variable.scss";
 #container{
     width: 100%;
     margin: 0;
@@ -46,7 +47,7 @@
 .messageBienvenue{
     text-align: center;
     background-color: #E5E5E5;
-    color: #21A98A;
+    color: $couleurPrincipal;
     padding-top: 10px;
     padding-bottom: 10px;
 }
