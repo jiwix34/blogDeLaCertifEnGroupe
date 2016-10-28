@@ -244,9 +244,9 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   padding-top: 100px;
   padding-bottom: 100px;
   padding-right: 350px;
-  padding-left: 350px;
-  /*fin arriere plan*/ }
+  padding-left: 350px; }
 
+/*fin arriere plan*/
 /*responsive arriere plan*/
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .imagelogin {
@@ -276,15 +276,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
       padding-top: 15px; } }
 
 /*fin div*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 21 oct. 2016, 11:18:30
-    Author     : jimmy
-*/
 .photo_event {
   text-align: left;
   margin-left: 5%;
