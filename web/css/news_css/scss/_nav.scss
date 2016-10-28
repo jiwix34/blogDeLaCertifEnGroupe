@@ -1,9 +1,16 @@
 @import "_variable.scss";
 
 
+@media (max-width: 767px) {
+.navLogo{
+  display: none;
+}
+}
+
+
 .navbar {
     min-height: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     border: 0px solid transparent;
 }
 //------------min--------------//
@@ -29,34 +36,16 @@
     color: #777;
 }
 .navbar-nav{
-    display: flex;
-    justify-content: center;
     float: none;
     margin: 0;
     padding-top: 30px;
 
 
 }
-.connexion {
+.navbar-nav .connexion  {
     background-color: $couleurPrincipal;
-    margin-top: -65%;
-    margin-bottom: 30px;
+    padding-top: 0;
 }
-
-@media (min-width: 768px) {
-    
-    .connexion {
-    font-size: 15px;
-    margin-bottom: 30px;
-    margin-left: 20px;   
-} 
-
-.navbar-nav{
-    margin-right: 50px;
-}
-}
-//----------min--------------//
-
 //----------min--------------//
 
 .navbar-default .navbar-nav > li > a {
@@ -180,4 +169,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-fixed-top {
     top: 0px;
     border-width: 0 0 0px;
+}
+
+@media (min-width:768px) and (max-width:874px) {
+    .navbar-default .navbar-nav > li > a {
+    color: black;
+    font-size: 16px;
+}
 }

@@ -17,6 +17,25 @@
     width: 60%;
 }
 
+.test1{
+    background-color: #E5E5E5;
+}
+
+.thumbHome{
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.boutonHome{
+        width: 120px;
+        font-size: 16px;
+        float: right;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        background-color: $couleurPrincipal;
+        color: black;
+    }
+
 .footer{
     background-color: #E5E5E5;
     text-align: center;

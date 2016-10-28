@@ -35,7 +35,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="{{path('home')}}">
+                                <a class="navbar-brand navLogo" href="{{path('home')}}">
                                     <img alt="Logo" src="{{asset('./images/logo.png')}}">
                                 </a>
                             </div>
@@ -50,36 +50,43 @@
                                     {% if is_granted("ROLE_ADMIN") %}
                                     <li><a class="" href="{{path('admin')}}">Mon espace personnel</a></li>
                                     {% endif %}
-                                </ul>
-                                <ul class="nav navbar-nav navbar-right">
                                     {% if is_granted("ROLE_ADMIN") %}
                                     <li class="connexion"><a class="" href="{{path('loginOut')}}">Déconnexion</a></li>
                                     {% else %}
                                     <li class="connexion"><a class="" href="{{path('login')}}">Connexion</a></li>
                                     {% endif %}
                                 </ul>
+                                
                             </div>
                         </div>
                     </nav>
                 </div>
                 {% block section %}
+                    <div class="col-md-12 test1">
                      {% for photos in annoncePhotos %}
-                <div class="changementCouleur col-xs-12 col-sm-12 col-md-12">
-                    <div class="thumbnail couleur">
+                         
+                <div class="col-sm-6 col-md-4 thumbHome">
+                    <div class="thumbnail">
                         <img class="img-section" src="{{asset('uploads/images/')~photos.photo}}" class="img-responsive"/>
                         <h2 class="title">{{photos.titre}}</h2>
                         <p>{{photos.ville}}</p>
                         <p>{{photos.appareilPhotoUtilise}}</p>
-                        <p>{{photos.commentaire}}</p>
+                        <p>{{photos.commentaire| truncate(60, true, ' ...')}}</p>
                         <p class="title"> {{photos.date|date('d/m/y')}} |</p>
                         <p class="title">{{photos.auteur}}</p>
                     </div>    
                 </div>
+                    
+                     
+                        
                 {% endfor %}
-                
+                <a type="button" class="btn boutonHome" href="{{path('photo')}}">En voir plus...</a>
+                </div> 
+                <div class="col-md-12 test">
                  {% for evenements in annonceEvent %}
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail thumbEvent">
+                     
+                    <div class="col-sm-6 col-md-4 thumbHome">
+                        <div class="thumbnail">
                             <img class="img-section" src="{{asset('uploads/images/')~evenements.photo}}" class="img-responsive">  
                             <h2 class="titleEvent">{{evenements.titre}} |</h2>
                             <p class="info">{{evenements.ville}}</p>
@@ -87,14 +94,17 @@
                             <p class="titleEvent"> {{evenements.date|date('d/m/y')}} |</p>
                             <p class="titleEvent">{{evenements.auteur}}</p>
                             <div class="comm_suite">
-                                <p class="commentaire">{{evenements.commentaire| truncate(100, true, ' ...')}}</p>
+                                <p class="commentaire">{{evenements.commentaire| truncate(60, true, ' ...')}}</p>
                                 <p class="suite"><a href="{{path('detailevenement', {'id':evenements.id})}}">Voir la suite</a></p>
                             </div>
 
                         </div>
-                    </div>    
+                    </div>  
+                      
 
                 {% endfor %}
+                <a type="button" class="btn boutonHome" href="{{path('evenement')}}">En voir plus...</a>
+                </div>
                 {% endblock %}
 
                 

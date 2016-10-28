@@ -25,7 +25,7 @@ $(window).on('scroll', function(){
 	if( $(window).scrollTop()>homeHeight){
 		$('.menu-nav').addClass('navbar-fixed-top');
                 $('.menu-nav').addClass('navbar-nav-min');
-                $('.connexion').css( { paddingTop : "30px",paddingBottom : "10px", transition :"0.4s" } );
+                $('.connexion').css( { paddingTop : "0",paddingBottom : "10px", transition :"0.4s" } );
                 $('.navbar-brand').css( { paddingTop : "5px", transition :"0.4s" } );
                
 	} else {
