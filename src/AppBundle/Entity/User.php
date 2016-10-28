@@ -1,7 +1,7 @@
 <?php
 
 namespace AppBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -33,15 +33,15 @@ class User implements UserInterface, \Serializable
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email()
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pass", type="string", length=255)
+     * @ORM\Column(name="pass", type="string", length=255, unique=true)
      */
     private $pass;
 
